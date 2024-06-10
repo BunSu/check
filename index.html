@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Tra Cứu Kết Quả Cận Lâm Sàng</title>
+    <title>Tra Cứu Kết Quả Cận Lâm Sàng</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,6 +66,12 @@
         .support p {
             margin: 5px 0;
         }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +80,7 @@
     </header>
     <div class="container">
         <form id="login-form">
-            <h2>Đăng Nhập Tài Khoản</h2>
+            <h2>Đăng Nhập Tài Khoản (Đối với Nhân Viên Y Tế)</h2>
             <div class="form-group">
                 <label for="username">Tên Đăng Nhập:</label>
                 <input type="text" id="username" name="username" required>
@@ -84,48 +90,95 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <button type="submit">Đăng Nhập</button>
+                <button type="button" onclick="login()">Đăng Nhập</button>
+                <button type="button" onclick="forgotPassword()">Quên Mật Khẩu</button>
             </div>
+            <p id="login-error" class="error" style="display: none;">Tên đăng nhập hoặc mật khẩu không đúng.</p>
         </form>
         
-        <form id="search-form">
+        <form id="search-form" style="display: none;">
             <h2>Tra Cứu Kết Quả Cận Lâm Sàng</h2>
             <div class="form-group">
                 <label for="name">Họ Tên Người Bệnh:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="dob">Ngày Tháng Năm Sinh:</label>
-                <input type="date" id="dob" name="dob" required>
+                <label for="dob">Năm Sinh:</label>
+                <input type="text" id="dob" name="dob" required>
             </div>
             <div class="form-group">
                 <label for="insurance">Mã Bảo Hiểm Y Tế hoặc CCCD/CMND:</label>
                 <input type="text" id="insurance" name="insurance" required>
             </div>
             <div class="form-group">
-                <label for="phone">Số Điện Thoại:</label>
+                <label for="phone">Số Điện Thoại Đã Đăng Ký Tại Bệnh Viện:</label>
                 <input type="text" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="recaptcha">reCAPTCHA:</label>
+                <input type="text" id="recaptcha" name="recaptcha" required>
             </div>
             <div class="form-group">
-                <label for="otp">Nhập Mã OTP:</label>
+                <button type="button" onclick="requestOtp()">Tìm Kiếm</button>
+            </div>
+        </form>
+
+        <form id="otp-form" style="display: none;">
+            <h2>Nhập Mã OTP</h2>
+            <div class="form-group">
+                <label for="otp">Mã OTP:</label>
                 <input type="text" id="otp" name="otp" required>
             </div>
             <div class="form-group">
-                <button type="submit">Tra Cứu</button>
+                <button type="button" onclick="verifyOtp()">Xác Nhận</button>
             </div>
         </form>
+
+        <div id="result-page" style="display: none;">
+            <h2>Kết Quả Cận Lâm Sàng</h2>
+            <p>Mẫu kết quả cận lâm sàng của bệnh nhân sẽ hiển thị ở đây.</p>
+            <!-- Thêm nội dung mẫu kết quả cận lâm sàng -->
+        </div>
 
         <div class="support">
             <h2>Hỗ Trợ</h2>
             <p><a href="#">Góp Ý Kiến Phản Hồi</a></p>
-            <p><a href="#">Hướng Dẫn Tra Cứu Kết Quả</a></p>
+            <p><a href="#">Hướng Dẫn Tra Cứu Kết Quả Trên Website</a></p>
             <p><a href="#">Sử Dụng Chatbot</a></p>
-            <p><a href="tel:1800-123-456">Hotline: 1800-123-456</a></p>
+            <p>Hotline: <a href="tel:0333467598">0333467598</a></p>
         </div>
     </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'vuongtuan' && password === '123456') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('search-form').style.display = 'block';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        function forgotPassword() {
+            alert('Vui lòng liên hệ quản trị viên để được hỗ trợ khôi phục mật khẩu.');
+        }
+
+        function requestOtp() {
+            document.getElementById('search-form').style.display = 'none';
+            document.getElementById('otp-form').style.display = 'block';
+        }
+
+        function verifyOtp() {
+            const otp = document.getElementById('otp').value;
+            if (otp === '123456') {
+                document.getElementById('otp-form').style.display = 'none';
+                document.getElementById('result-page').style.display = 'block';
+            } else {
+                alert('Mã OTP không đúng. Vui lòng thử lại.');
+            }
+        }
+    </script>
 </body>
 </html>
