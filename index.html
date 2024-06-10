@@ -212,4 +212,37 @@
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            if (username ===
+            if (username === '1' && password === '1') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('staff-search-form').style.display = 'block';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        function forgotPassword() {
+            alert('Vui lòng liên hệ quản trị viên để được hỗ trợ khôi phục mật khẩu.');
+        }
+
+        function requestOtp() {
+            document.getElementById('search-form').style.display = 'none';
+            document.getElementById('otp-form').style.display = 'block';
+        }
+
+        function verifyOtp() {
+            const otp = document.getElementById('otp').value;
+            if (otp === '123456') {
+                document.getElementById('otp-form').style.display = 'none';
+                document.getElementById('result-page').style.display = 'block';
+            } else {
+                alert('Mã OTP không đúng. Vui lòng thử lại.');
+            }
+        }
+
+        function staffSearch() {
+            document.getElementById('staff-search-form').style.display = 'none';
+            document.getElementById('result-page').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
