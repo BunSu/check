@@ -96,21 +96,32 @@
 
     <script>
         function sendOTP() {
-            // Code để gửi mã OTP và xử lý logic xác thực
-            // Ở đây chỉ mô phỏng, không thực hiện được vì cần phía server
+            // Gửi yêu cầu tới server để gửi mã OTP
+            // Đoạn mã này mô phỏng, bạn cần thay đổi để gửi yêu cầu thực tế
+            alert('Mã OTP đã được gửi đến số điện thoại của bạn.');
+
+            // Hiển thị form nhập mã OTP
             document.getElementById('otpForm').style.display = 'block';
         }
 
         function verifyOTP() {
-            // Code để xác thực OTP và lấy kết quả cận lâm sàng
-            // Ở đây chỉ mô phỏng, không thực hiện được vì cần phía server
+            // Lấy giá trị nhập vào từ form
+            var otp = document.getElementById('otp').value;
+
+            // Gửi yêu cầu xác thực OTP tới server
+            // Đoạn mã này mô phỏng, bạn cần thay đổi để gửi yêu cầu thực tế
+            if (otp === '') {
+                alert('Vui lòng nhập mã OTP.');
+                return;
+            }
+
+            // Xác thực thành công, hiển thị kết quả
             document.getElementById('resultContainer').style.display = 'block';
-            // Sau khi có dữ liệu từ server, hiển thị kết quả
             displayResult(); // Hàm để hiển thị kết quả
         }
 
         function displayResult() {
-            // Mô phỏng hiển thị kết quả
+            // Hiển thị kết quả mô phỏng (sử dụng dữ liệu cứng)
             document.getElementById('testType').innerHTML = "<strong>Loại xét nghiệm:</strong> Xét nghiệm ABC";
             document.getElementById('testDate').innerHTML = "<strong>Ngày thực hiện:</strong> 2024-06-24";
             document.getElementById('normalValues').innerHTML = "<strong>Giá trị bình thường:</strong> 10 - 50";
