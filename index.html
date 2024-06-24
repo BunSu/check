@@ -3,45 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bệnh viện đa khoa y dược cổ truyền – Phục hồi chức năng tỉnh Cao Bằng</title>
+    <title>Bệnh viện Đa khoa Y dược cổ truyền phục hồi chức năng tỉnh Cao Bằng</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #004080;
+        .header {
+            background-color: #4CAF50;
             color: white;
-            padding: 10px 0;
+            padding: 15px;
             text-align: center;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto;
         }
         .container {
-            width: 80%;
-            margin: 20px auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .button-group {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button {
-            background-color: #004080;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -55,99 +32,56 @@
             padding: 8px;
             box-sizing: border-box;
         }
-        .recaptcha {
-            text-align: center;
-            margin: 20px 0;
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
         }
-        .support {
-            margin-top: 20px;
+        .button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Bệnh viện đa khoa y dược cổ truyền – Phục hồi chức năng tỉnh Cao Bằng" class="logo">
-    </header>
+    <div class="header">
+        <h1>SỞ Y TẾ CAO BẰNG</h1>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
+    </div>
     <div class="container">
-        <h2>Chọn loại người dùng</h2>
-        <div class="button-group">
-            <button class="button" onclick="showPatientForm()">Người bệnh</button>
-            <button class="button" onclick="showStaffForm()">Nhân viên y tế</button>
-        </div>
-        <div id="patientForm" style="display: none;">
-            <h3>Tra cứu kết quả cận lâm sàng</h3>
+        <h3>Tra cứu kết quả cận lâm sàng</h3>
+        <form id="searchForm">
             <div class="form-group">
-                <label for="patientName">Họ tên người bệnh:</label>
-                <input type="text" id="patientName" required>
+                <label for="name">Họ tên người bệnh *</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="patientDOB">Năm sinh:</label>
-                <input type="text" id="patientDOB" required>
+                <label for="dob">Ngày tháng năm sinh *</label>
+                <input type="date" id="dob" name="dob" required>
             </div>
             <div class="form-group">
-                <label for="patientID">Mã bảo hiểm y tế hoặc CCCD/CMT:</label>
-                <input type="text" id="patientID" required>
+                <label for="insurance">Mã bảo hiểm y tế *</label>
+                <input type="text" id="insurance" name="insurance" required>
             </div>
             <div class="form-group">
-                <label for="patientPhone">Số điện thoại đã đăng ký tại Bệnh viện:</label>
-                <input type="text" id="patientPhone" required>
-            </div>
-            <div class="recaptcha">
-                <input type="checkbox" id="recaptcha" required> Tôi không phải là máy
-            </div>
-            <button class="button" onclick="requestOTP()">Tìm kiếm</button>
-        </div>
-        <div id="staffForm" style="display: none;">
-            <h3>Đăng nhập nhân viên y tế</h3>
-            <div class="form-group">
-                <label for="staffUsername">Tên đăng nhập:</label>
-                <input type="text" id="staffUsername" required>
+                <label for="patientId">Mã số người bệnh hoặc CCCD/CMND *</label>
+                <input type="text" id="patientId" name="patientId" required>
             </div>
             <div class="form-group">
-                <label for="staffPassword">Mật khẩu:</label>
-                <input type="password" id="staffPassword" required>
+                <label for="phone">Số điện thoại đã đăng ký tại Bệnh viện *</label>
+                <input type="tel" id="phone" name="phone" required>
             </div>
-            <button class="button" onclick="loginStaff()">Đăng nhập</button>
-            <a href="#" onclick="forgotPassword()">Quên mật khẩu?</a>
-        </div>
-        <div class="support">
-            <h3>Hỗ trợ</h3>
-            <ul>
-                <li><a href="mailto:support@example.com">Góp ý kiến phản hồi gửi email</a></li>
-                <li><a href="#">Hướng dẫn tra cứu kết quả trên website</a></li>
-                <li><a href="#">Sử dụng chatbot, hotline</a></li>
-            </ul>
-        </div>
+            <div class="form-group">
+                <button type="submit" class="button">Tra cứu</button>
+            </div>
+        </form>
     </div>
     <script>
-        function showPatientForm() {
-            document.getElementById('patientForm').style.display = 'block';
-            document.getElementById('staffForm').style.display = 'none';
-        }
-        function showStaffForm() {
-            document.getElementById('patientForm').style.display = 'none';
-            document.getElementById('staffForm').style.display = 'block';
-        }
-        function requestOTP() {
-            // Add OTP request logic here
-            alert('Mã OTP đã được gửi đến số điện thoại đăng ký.');
-            // Redirect to OTP input page
-            window.location.href = 'otp.html';
-        }
-        function loginStaff() {
-            const username = document.getElementById('staffUsername').value;
-            const password = document.getElementById('staffPassword').value;
-            if (username === '1' && password === '1') {
-                alert('Đăng nhập thành công');
-                // Redirect to staff portal
-                window.location.href = 'staff_portal.html';
-            } else {
-                alert('Tên đăng nhập hoặc mật khẩu không đúng');
-            }
-        }
-        function forgotPassword() {
-            alert('Vui lòng liên hệ quản trị viên để lấy lại mật khẩu.');
-        }
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mã OTP đã được gửi đến số điện thoại của bạn.');
+        });
     </script>
 </body>
 </html>
