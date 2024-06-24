@@ -1,120 +1,144 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bệnh viện Đa khoa Y dược cổ truyền phục hồi chức năng tỉnh Cao Bằng</title>
+    <title>Tra cứu kết quả cận lâm sàng</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
-            padding: 0;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .header {
-            background-color: rgba(76, 175, 80, 0.9);
-            color: white;
             padding: 20px;
-            text-align: center;
-        }
-        .header img {
-            width: 100px;
-            display: block;
-            margin: 0 auto;
         }
         .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            margin: 20px auto;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
         .form-group {
             margin-bottom: 15px;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
+        label {
+            font-weight: bold;
         }
-        .form-group input {
+        input[type="text"], input[type="tel"] {
             width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .button {
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 15px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            width: 100%;
         }
-        .button:hover {
-            background-color: #45a049;
-        }
-        .help-links {
+        .result-container {
             margin-top: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
         }
-        .help-links a {
-            display: block;
-            color: #4CAF50;
-            text-decoration: none;
+        .result {
             margin-bottom: 10px;
         }
-        .help-links a:hover {
-            text-decoration: underline;
+        .feedback {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .contact-support {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="logo.png" alt="Logo Bệnh viện">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
     <div class="container">
-        <h3>Tra cứu kết quả cận lâm sàng</h3>
-        <form id="searchForm">
+        <h1>Tra cứu kết quả cận lâm sàng</h1>
+        <div class="form-group">
+            <label for="fullname">Họ và tên người bệnh <span style="color: red;">*</span></label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="healthInsurance">Mã bảo hiểm y tế <span style="color: red;">*</span></label>
+            <input type="text" id="healthInsurance" name="healthInsurance" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Số điện thoại đã đăng ký tại Bệnh viện <span style="color: red;">*</span></label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
+
+        <div id="otpForm" style="display: none;">
             <div class="form-group">
-                <label for="name">Họ tên người bệnh *</label>
-                <input type="text" id="name" name="name" required>
+                <label for="otp">Nhập mã OTP đã nhận</label>
+                <input type="text" id="otp" name="otp">
             </div>
-            <div class="form-group">
-                <label for="dob">Ngày tháng năm sinh *</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-            <div class="form-group">
-                <label for="insurance">Mã bảo hiểm y tế *</label>
-                <input type="text" id="insurance" name="insurance" required>
-            </div>
-            <div class="form-group">
-                <label for="patientId">Mã số người bệnh hoặc CCCD/CMND *</label>
-                <input type="text" id="patientId" name="patientId" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Số điện thoại đã đăng ký tại Bệnh viện *</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="button">Tra cứu</button>
-            </div>
-        </form>
-        <div class="help-links">
-            <a href="feedback.html">Góp ý kiến phản hồi</a>
-            <a href="guidance.html">Hướng dẫn tra cứu kết quả</a>
-            <a href="tel:0333467598">Hotline: 0333.467.598</a>
+            <button type="button" onclick="verifyOTP()">Xác nhận OTP</button>
+        </div>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <h2>Kết quả cận lâm sàng</h2>
+            <div class="result" id="testType"><strong>Loại xét nghiệm:</strong> Xét nghiệm ABC</div>
+            <div class="result" id="testDate"><strong>Ngày thực hiện:</strong> 2024-06-24</div>
+            <div class="result" id="normalValues"><strong>Giá trị bình thường:</strong> 10 - 50</div>
+            <div class="result" id="testResult"><strong>Kết quả xét nghiệm:</strong> 30</div>
+            <div class="result" id="doctorNote"><strong>Ghi chú:</strong> Không có ghi chú.</div>
+            <button onclick="exportToPDF()">Xuất PDF</button>
+        </div>
+
+        <div class="feedback">
+            <h2>Ý kiến phản hồi</h2>
+            <p>Để góp ý hoặc nhận tư vấn về các chỉ số và yếu tố liên quan, vui lòng liên hệ:</p>
+            <ul>
+                <li>Chatbot</li>
+                <li>Hotline: 0333.467.598</li>
+            </ul>
+        </div>
+
+        <div class="contact-support">
+            <h2>Hỗ trợ liên lạc</h2>
+            <p>Để được hỗ trợ liên lạc trực tiếp với bộ phận chăm sóc - công tác xã hội của Bệnh viện, vui lòng liên hệ:</p>
+            <ul>
+                <li>Chatbot</li>
+                <li>Hotline: 0333.467.598</li>
+            </ul>
         </div>
     </div>
+
     <script>
-        document.getElementById('searchForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        function sendOTP() {
+            // Mô phỏng hàm gửi mã OTP
+            document.getElementById('otpForm').style.display = 'block';
             alert('Mã OTP đã được gửi đến số điện thoại của bạn.');
-            window.location.href = 'result.html';
-        });
+        }
+
+        function verifyOTP() {
+            // Mô phỏng hàm xác nhận OTP và hiển thị kết quả
+            document.getElementById('resultContainer').style.display = 'block';
+            alert('Xác nhận mã OTP thành công.');
+        }
+
+        function exportToPDF() {
+            // Mô phỏng hàm xuất kết quả ra PDF
+            alert('Đã xuất kết quả ra PDF thành công!');
+        }
     </script>
 </body>
 </html>
