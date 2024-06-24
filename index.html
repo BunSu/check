@@ -10,15 +10,26 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
         }
         .header {
-            background-color: #4CAF50;
+            background-color: rgba(76, 175, 80, 0.9);
             color: white;
             padding: 20px;
             text-align: center;
         }
+        .header img {
+            width: 100px;
+        }
         .container {
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -38,6 +49,7 @@
             padding: 10px 15px;
             border: none;
             cursor: pointer;
+            width: 100%;
         }
         .button:hover {
             background-color: #45a049;
@@ -58,9 +70,9 @@
 </head>
 <body>
     <div class="header">
+        <img src="logo.png" alt="Logo Bệnh viện">
         <h1>SỞ Y TẾ CAO BẰNG</h1>
         <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-        <img src="logo.png" alt="Logo Bệnh viện">
     </div>
     <div class="container">
         <h3>Tra cứu kết quả cận lâm sàng</h3>
@@ -92,295 +104,15 @@
         <div class="help-links">
             <a href="feedback.html">Góp ý kiến phản hồi</a>
             <a href="guidance.html">Hướng dẫn tra cứu kết quả</a>
-            <a href="tel:123456789">Hotline: 123-456-789</a>
+            <a href="tel:0333467598">Hotline: 0333.467.598</a>
         </div>
     </div>
     <script>
         document.getElementById('searchForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Giả lập gửi mã OTP
             alert('Mã OTP đã được gửi đến số điện thoại của bạn.');
-            // Chuyển đến trang nhập mã OTP
-            window.location.href = 'otp.html';
+            window.location.href = 'result.html';
         });
     </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhập mã OTP</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
-    <div class="container">
-        <h3>Nhập mã OTP</h3>
-        <form id="otpForm">
-            <div class="form-group">
-                <label for="otp">Mã OTP *</label>
-                <input type="text" id="otp" name="otp" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="button">Xác nhận</button>
-            </div>
-        </form>
-    </div>
-    <script>
-        document.getElementById('otpForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Giả lập xác nhận mã OTP
-            alert('Mã OTP đã được xác nhận.');
-            // Chuyển đến trang kết quả tra cứu
-            window.location.href = 'results.html';
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết quả tra cứu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
-    <div class="container">
-        <h3>Kết quả tra cứu</h3>
-        <table>
-            <tr>
-                <th>Loại xét nghiệm</th>
-                <th>Ngày thực hiện</th>
-                <th>Giá trị bình thường</th>
-                <th>Kết quả</th>
-                <th>Ghi chú</th>
-            </tr>
-            <tr>
-                <td>Xét nghiệm máu</td>
-                <td>01/01/2023</td>
-                <td>4.0 - 6.0</td>
-                <td>5.2</td>
-                <td></td>
-            </tr>
-            <!-- Thêm các hàng khác tương tự -->
-        </table>
-        <button class="button" onclick="downloadPDF()">Xuất PDF</button>
-    </div>
-    <script>
-        function downloadPDF() {
-            alert('Xuất kết quả sang PDF.');
-            // Sử dụng jsPDF hoặc thư viện tương tự để xuất kết quả sang PDF
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góp ý kiến phản hồi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
-    <div class="container">
-        <h3>Góp ý kiến phản hồi</h3>
-        <form id="feedbackForm">
-            <div class="form-group">
-                <label for="feedback">Nội dung góp ý *</label>
-                <textarea id="feedback" name="feedback" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="button">Gửi phản hồi</button>
-            </div>
-        </form>
-    </div>
-    <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Cảm ơn bạn đã gửi phản hồi.');
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn tra cứu kết quả</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
-    <div class="container">
-        <h3>Hướng dẫn tra cứu kết quả</h3>
-        <p>1. Truy cập vào trang web và nhập thông tin cá nhân.</p>
-        <p>2. Nhận mã OTP gửi về số điện thoại đã đăng ký.</p>
-        <p>3. Nhập mã OTP để xác nhận và xem kết quả.</p>
-        <p>4. Bạn có thể xuất kết quả sang định dạng PDF để lưu trữ hoặc in ra.</p>
-        <button class="button" onclick="window.location.href='index.html'">Quay lại trang chủ</button>
-    </div>
 </body>
 </html>
