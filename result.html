@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả tra cứu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SỞ Y TẾ CAO BẰNG</h1>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
+    </div>
+    <div class="container">
+        <h3>Kết quả tra cứu</h3>
+        <table>
+            <tr>
+                <th>Loại xét nghiệm</th>
+                <th>Ngày thực hiện</th>
+                <th>Giá trị bình thường</th>
+                <th>Kết quả</th>
+                <th>Ghi chú</th>
+            </tr>
+            <tr>
+                <td>Xét nghiệm máu</td>
+                <td>01/01/2023</td>
+                <td>4.0 - 6.0</td>
+                <td>5.2</td>
+                <td></td>
+            </tr>
+        </table>
+        <button class="button" onclick="downloadPDF()">Xuất PDF</button>
+    </div>
+    <script>
+        function downloadPDF() {
+            alert('Xuất kết quả sang PDF.');
+        }
+    </script>
+</body>
+</html>
