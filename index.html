@@ -19,7 +19,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             margin-bottom: 20px;
         }
@@ -53,6 +53,15 @@
         }
         .result {
             margin-bottom: 10px;
+        }
+        .support-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .support-section h2 {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -91,6 +100,22 @@
             <div class="result" id="testResult"></div>
             <div class="result" id="doctorNote"></div>
             <button onclick="exportToPDF()">Xuất PDF</button>
+        </div>
+
+        <div class="support-section">
+            <h2>Hỗ trợ</h2>
+            <div class="form-group">
+                <label for="feedback">Góp ý kiến phản hồi, tư vấn về các chỉ số và các yếu tố liên quan</label>
+                <input type="text" id="feedback" name="feedback">
+            </div>
+            <div class="form-group">
+                <label for="guidance">Hướng dẫn tra cứu kết quả trên website</label>
+                <input type="text" id="guidance" name="guidance">
+            </div>
+            <div class="form-group">
+                <label for="chatbot">Sử dụng chatbot, hotline</label>
+                <input type="text" id="chatbot" name="chatbot">
+            </div>
         </div>
     </div>
 
