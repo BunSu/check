@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tra Cứu - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN</h2>
+            <nav>
+                <a href="index.html">Trở lại Trang Chủ</a>
+                <a href="https://facebook.com/yourfanpage" target="_blank">Fanpage</a>
+                <a href="https://facebook.com/yourfacebook" target="_blank">Facebook</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="instructions">
+            <h3>Hướng Dẫn Sử Dụng Hệ Thống Tra Cứu</h3>
+            <p>Vui lòng nhập thông tin bệnh nhân để tra cứu kết quả cận lâm sàng.</p>
+        </section>
+
+        <section class="lookup-form">
+            <h3>HỒ SƠ BỆNH ÁN</h3>
+            <form id="lookupForm">
+                <label for="fullName">Họ và Tên:</label>
+                <input type="text" id="fullName" value="Vương Quốc Tuấn" required>
+
+                <label for="patientId">Mã Bệnh Án:</label>
+                <input type="text" id="patientId" value="123456" required>
+
+                <button type="button" id="viewResults">Xem Kết Quả Cận Lâm Sàng</button>
+            </form>
+        </section>
+
+        <section class="results-display">
+            <h3>Kết Quả Tra Cứu</h3>
+            <div id="results">
+                <!-- Kết quả sẽ được hiển thị ở đây -->
+                <p>Thông tin bệnh nhân: <span id="patientInfo"></span></p>
+                <p>Ngày khám: <span id="examDate"></span></p>
+                <label for="selectExamDate">Chọn Ngày Khám:</label>
+                <input type="date" id="selectExamDate">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bệnh Viện Đa Khoa Y Dược Cổ Truyền Cao Bằng</p>
+    </footer>
+</body>
+</html>
