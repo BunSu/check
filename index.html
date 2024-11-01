@@ -39,14 +39,9 @@
     <script>
         document.getElementById("otp-form").onsubmit = function(event) {
             event.preventDefault(); // Ngăn chặn hành vi mặc định của form
-            var otpInput = document.getElementById("otp").value;
-            
-            // Kiểm tra mã OTP (giả định mã OTP luôn đúng)
-            if (otpInput) { // Nếu có mã OTP
-                window.location.href = "patient_record.html"; // Chuyển đến trang hồ sơ bệnh án
-            } else {
-                document.getElementById("otp-message").innerText = "Mã OTP không chính xác.";
-            }
+
+            // Chuyển đến trang hồ sơ bệnh án mà không cần kiểm tra mã OTP
+            window.location.href = "patient_record.html"; 
         };
     </script>
 </body>
