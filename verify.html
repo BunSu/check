@@ -5,22 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HỒ SƠ BỆNH ÁN</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function confirmPatient() {
-            // Lấy thông tin người bệnh
-            const name = document.getElementById('patient-name').value;
-            const id = document.getElementById('patient-id').value;
-            const phone = document.getElementById('patient-phone').value;
-
-            // Kiểm tra thông tin
-            if (name && id && phone) {
-                // Chuyển hướng tới trang hồ sơ bệnh án
-                window.location.href = 'verify.html?name=' + encodeURIComponent(name) + '&id=' + encodeURIComponent(id);
-            } else {
-                alert("Vui lòng nhập đầy đủ thông tin.");
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -38,16 +22,18 @@
 
     <section class="patient-info">
         <h2>Thông tin người bệnh</h2>
-        <label for="patient-name">Họ và tên:</label>
-        <input type="text" id="patient-name" required><br>
+        <form id="patient-form" action="verify.html" method="GET">
+            <label for="patient-name">Họ và tên:</label>
+            <input type="text" id="patient-name" name="name" required><br>
 
-        <label for="patient-id">Số CCCD hoặc mã BYHT:</label>
-        <input type="text" id="patient-id" required><br>
+            <label for="patient-id">Số CCCD hoặc mã BYHT:</label>
+            <input type="text" id="patient-id" name="id" required><br>
 
-        <label for="patient-phone">Số điện thoại:</label>
-        <input type="text" id="patient-phone" required><br>
+            <label for="patient-phone">Số điện thoại:</label>
+            <input type="text" id="patient-phone" name="phone" required><br>
 
-        <button onclick="confirmPatient()">Xác nhận</button>
+            <button type="submit">Xác nhận</button>
+        </form>
     </section>
 </body>
 </html>
