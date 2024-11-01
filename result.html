@@ -1,93 +1,38 @@
+<!-- results.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết quả tra cứu</title>
+    <title>Hồ Sơ Người Bệnh</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .header img {
-            width: 100px;
-            display: block;
-            margin: 0 auto;
-        }
-        .container {
-            padding: 20px;
-            background-color: white;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        .container { max-width: 600px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="date"] { width: 100%; padding: 8px; }
+        button { padding: 10px 15px; background-color: #28a745; color: white; border: none; cursor: pointer; width: 100%; }
+        button:hover { background-color: #218838; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="logo.png" alt="Logo Bệnh viện">
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG TỈNH CAO BẰNG</h2>
-    </div>
     <div class="container">
-        <h3>Kết quả tra cứu</h3>
-        <table>
-            <tr>
-                <th>Loại xét nghiệm</th>
-                <th>Ngày thực hiện</th>
-                <th>Giá trị bình thường</th>
-                <th>Kết quả</th>
-                <th>Ghi chú</th>
-            </tr>
-            <tr>
-                <td>Xét nghiệm máu</td>
-                <td>01/01/2023</td>
-                <td>4.0 - 6.0</td>
-                <td>5.2</td>
-                <td></td>
-            </tr>
-        </table>
-        <button class="button" onclick="downloadPDF()">Xuất PDF</button>
-    </div>
-    <script>
-        function downloadPDF() {
-            alert('Xuất kết quả sang PDF.');
-        }
-    </script>
-</body>
-</html>
+        <h1>Hồ Sơ Người Bệnh</h1>
+        <h2>Người bệnh: Vương Quốc Tuấn</h2>
+        <div class="form-group">
+            <label for="exam-date">Chọn ngày khám:</label>
+            <input type="date" id="exam-date">
+            <button onclick="confirmDate()">Xác nhận</button>
+        </div>
+
+        <div id="results" style="display:none;">
+            <h3>Kết quả:</h3>
+            <p><strong>Kết quả siêu âm:</strong> 27/09/2024</p>
+            <p><strong>Kết quả Xquang:</strong> 27/09/2024</p>
+            <p><strong>Kết quả Điện tim:</strong> 27/09/2024</p>
+            <p><strong>Kết quả Xét nghiệm:</strong> 27/09/2024</p>
+            <p>Loại xét nghiệm: Xét nghiệm ABC</p>
+            <p>Ngày thực hiện: 2024-06-24</p>
+            <p>Giá trị bình thường: 10 – 50</p>
+            <p>Kết quả xét nghiệm:
