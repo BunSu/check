@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffeb3b; /* Màu nền vàng tươi */
+    background-color: #e0f7fa; /* Màu nền xanh nhạt tươi sáng */
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,7 @@ body {
     background-color: #ffffff; /* Màu nền trắng cho container */
     padding: 30px; /* Thêm padding cho container */
     border-radius: 10px; /* Bo tròn góc cho container */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Thêm bóng cho container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng cho container */
     text-align: center; /* Căn giữa tất cả nội dung trong container */
 }
 
@@ -20,17 +20,17 @@ header {
 }
 
 h1 {
-    color: #e91e63; /* Màu hồng rực rỡ cho tiêu đề chính */
+    color: #00796b; /* Màu xanh lá đậm cho tiêu đề chính */
     font-size: 2.5em; /* Kích thước chữ lớn */
 }
 
 h2 {
-    color: #3f51b5; /* Màu xanh dương tươi sáng cho tiêu đề phụ */
+    color: #0288d1; /* Màu xanh dương cho tiêu đề phụ */
     font-size: 1.5em; /* Kích thước chữ vừa */
 }
 
 h3 {
-    color: #ff5722; /* Màu cam cho tiêu đề nhỏ */
+    color: #f57c00; /* Màu cam cho tiêu đề nhỏ */
     font-size: 1.3em; /* Kích thước chữ vừa */
 }
 
@@ -42,20 +42,20 @@ form {
 label {
     margin-top: 20px; /* Khoảng cách trên các nhãn */
     font-size: 1.2em; /* Kích thước chữ lớn hơn */
-    color: #ff5722; /* Màu cam cho nhãn */
+    color: #00796b; /* Màu xanh lá đậm cho nhãn */
 }
 
 input[type="text"], input[type="tel"], input[type="date"] {
     padding: 12px; /* Thêm padding cho input */
     font-size: 1em; /* Kích thước chữ trong input */
-    border: 2px solid #4caf50; /* Đường viền màu xanh lá cho input */
+    border: 2px solid #81d4fa; /* Đường viền màu xanh nhạt cho input */
     border-radius: 5px; /* Bo tròn góc cho input */
     margin-top: 5px; /* Khoảng cách giữa nhãn và input */
     transition: border-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
 }
 
 input[type="text"]:focus, input[type="tel"]:focus, input[type="date"]:focus {
-    border-color: #8bc34a; /* Màu viền khi input được chọn */
+    border-color: #4db6ac; /* Màu viền khi input được chọn */
     outline: none; /* Xóa outline mặc định */
 }
 
@@ -63,7 +63,7 @@ button {
     padding: 12px; /* Thêm padding cho nút */
     font-size: 1.2em; /* Kích thước chữ lớn hơn */
     margin-top: 20px; /* Khoảng cách trên nút */
-    background-color: #ff5722; /* Màu nền cam cho nút */
+    background-color: #4caf50; /* Màu nền xanh lá cho nút */
     color: white; /* Màu chữ cho nút */
     border: none; /* Xóa đường viền */
     border-radius: 5px; /* Bo tròn góc cho nút */
@@ -72,7 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: #e64a19; /* Màu nền khi hover qua nút */
+    background-color: #388e3c; /* Màu nền khi hover qua nút */
 }
 
 #otp-message {
@@ -103,7 +103,7 @@ button:hover {
 }
 
 .table th {
-    background-color: #ff5722; /* Màu nền cho tiêu đề bảng */
+    background-color: #4caf50; /* Màu nền cho tiêu đề bảng */
     color: white; /* Màu chữ cho tiêu đề bảng */
 }
 
@@ -112,7 +112,7 @@ button:hover {
 }
 
 .table tr:hover {
-    background-color: #ffe0b2; /* Màu nền khi hover qua hàng */
+    background-color: #c8e6c9; /* Màu nền khi hover qua hàng */
 }
 
 .image-preview {
@@ -126,5 +126,5 @@ button:hover {
     max-width: 200px; /* Kích thước tối đa cho hình ảnh */
     margin: 10px; /* Khoảng cách giữa các hình ảnh */
     border-radius: 10px; /* Bo tròn góc cho hình ảnh */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Thêm bóng cho hình ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho hình ảnh */
 }
