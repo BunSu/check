@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra Cứu Kết Quả Cận Lâm Sàng</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f4f6f9; color: #333; }
-        .container { width: 350px; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); text-align: center; }
-        h1, h2 { color: #007bff; margin-bottom: 15px; }
-        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; }
-        button { width: 100%; padding: 12px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
-        button:hover { background-color: #0056b3; }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { width: 300px; text-align: center; }
         .section { display: none; }
         .active { display: block; }
-        .info-text { margin: 10px 0 20px; font-size: 14px; color: #666; }
-        .results a { text-decoration: none; color: #007bff; display: block; margin: 8px 0; font-size: 14px; }
-        .results a:hover { text-decoration: underline; }
-        .footer-note { margin-top: 30px; font-size: 12px; color: #999; }
+        input, select { width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #333; color: #fff; border: none; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #555; }
     </style>
 </head>
 <body>
@@ -25,19 +19,18 @@
         <!-- Trang 1: Đăng nhập với mã OTP -->
         <div id="section1" class="section active">
             <h2>Tra Cứu Kết Quả Cận Lâm Sàng</h2>
-            <p class="info-text">Vui lòng nhập thông tin của bạn để bắt đầu tra cứu.</p>
-            <input type="text" id="fullName" placeholder="Họ và tên người bệnh" required>
-            <input type="text" id="idNumber" placeholder="Số CCCD hoặc mã BYHT" required>
-            <input type="tel" id="phoneNumber" placeholder="Số điện thoại đã đăng ký" required>
+            <input type="text" placeholder="Họ và tên người bệnh" required>
+            <input type="text" placeholder="Số CCCD hoặc mã BYHT" required>
+            <input type="text" placeholder="Số điện thoại đã đăng ký" required>
             <button onclick="sendOTP()">Gửi mã OTP</button>
-            <input type="text" id="otpCode" placeholder="Nhập mã OTP">
+            <input type="text" placeholder="Nhập mã OTP">
             <button onclick="login()">Xác nhận</button>
         </div>
 
         <!-- Trang 2: Hồ sơ bệnh án -->
         <div id="section2" class="section">
             <h1>Hồ Sơ Bệnh Án</h1>
-            <p class="info-text">Thông tin bệnh nhân: Vương Quốc Tuấn</p>
+            <p>Họ và tên người bệnh: Vương Quốc Tuấn</p>
             <p>Mã bệnh án: 123456</p>
             <button onclick="viewResults()">Xem Kết Quả Cận Lâm Sàng</button>
         </div>
@@ -52,21 +45,20 @@
         <!-- Trang 4: Hồ sơ người bệnh và chọn ngày khám -->
         <div id="section4" class="section">
             <h1>Hồ Sơ Người Bệnh</h1>
-            <p class="info-text">Bệnh nhân: Vương Quốc Tuấn</p>
+            <p>Người bệnh: Vương Quốc Tuấn</p>
             <label for="date">Chọn ngày khám, điều trị:</label>
             <input type="date" id="date" name="date">
             <button onclick="confirmDate()">Xác nhận</button>
-            <div id="results" class="results" style="margin-top: 20px; display: none;">
+            <div id="results" style="margin-top: 20px; display: none;">
                 <h2>Kết Quả Cận Lâm Sàng Ngày 27/09/2024</h2>
-                <a href="ketqua_sieuam.pdf" target="_blank">Kết quả siêu âm (PDF)</a>
-                <a href="ketqua_xquang.pdf" target="_blank">Kết quả Xquang (PDF)</a>
-                <a href="ketqua_dientim.pdf" target="_blank">Kết quả Điện tim (PDF)</a>
-                <a href="ketqua_xetnghiem.pdf" target="_blank">Kết quả Xét nghiệm (PDF)</a>
-                <a href="ketqua_domatdoxuong.pdf" target="_blank">Kết quả Đo mật độ xương (PDF)</a>
-                <a href="ketqua_noisoi.pdf" target="_blank">Kết quả nội soi (PDF)</a>
+                <p><a href="ketqua_sieuam.pdf" target="_blank">Kết quả siêu âm (PDF)</a></p>
+                <p><a href="ketqua_xquang.pdf" target="_blank">Kết quả Xquang (PDF)</a></p>
+                <p><a href="ketqua_dientim.pdf" target="_blank">Kết quả Điện tim (PDF)</a></p>
+                <p><a href="ketqua_xetnghiem.pdf" target="_blank">Kết quả Xét nghiệm (PDF)</a></p>
+                <p><a href="ketqua_domatdoxuong.pdf" target="_blank">Kết quả Đo mật độ xương (PDF)</a></p>
+                <p><a href="ketqua_noisoi.pdf" target="_blank">Kết quả nội soi (PDF)</a></p>
             </div>
         </div>
-        <p class="footer-note">© 2024 Website tra cứu kết quả cận lâm sàng. Bảo mật thông tin tuyệt đối.</p>
     </div>
 
     <script>
@@ -78,20 +70,10 @@
 
         function sendOTP() {
             alert("Mã OTP đã được gửi đến số điện thoại của bạn!");
-            document.getElementById("otpCode").focus();
         }
 
         function login() {
-            const fullName = document.getElementById("fullName").value;
-            const idNumber = document.getElementById("idNumber").value;
-            const phoneNumber = document.getElementById("phoneNumber").value;
-            const otpCode = document.getElementById("otpCode").value;
-            
-            if (fullName && idNumber && phoneNumber && otpCode === "1234") { // Giả sử mã OTP là "1234" cho demo
-                showSection('section2');
-            } else {
-                alert("Vui lòng kiểm tra lại thông tin và mã OTP.");
-            }
+            showSection('section2');
         }
 
         function viewResults() {
@@ -103,13 +85,8 @@
         }
 
         function confirmDate() {
-            const selectedDate = document.getElementById("date").value;
-            if (selectedDate) {
-                document.getElementById('results').style.display = 'block';
-                alert("Ngày khám đã được xác nhận. Xem kết quả bên dưới.");
-            } else {
-                alert("Vui lòng chọn ngày khám.");
-            }
+            document.getElementById('results').style.display = 'block';
+            alert("Ngày khám được xác nhận. Xem kết quả bên dưới.");
         }
     </script>
 </body>
