@@ -9,9 +9,12 @@
 <body>
     <header>
         <div class="container">
-            <h1>SỞ Y TẾ CAO BẰNG</h1>
-            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN</h2>
+            <div class="logo">
+                <img src="logo.png" alt="Logo Bệnh Viện">
+            </div>
             <nav>
+                <a href="index.html">Trang Chủ</a>
+                <a href="lookup.html">Tra Cứu Kết Quả</a>
                 <a href="https://facebook.com/yourfanpage" target="_blank">Fanpage</a>
                 <a href="https://facebook.com/yourfacebook" target="_blank">Facebook</a>
             </nav>
@@ -19,48 +22,69 @@
     </header>
 
     <main>
-        <section class="intro">
-            <h3>Chào Mừng Đến Với Hệ Thống Tra Cứu Kết Quả Cận Lâm Sàng</h3>
-            <p>Tin tức và các dịch vụ nổi bật của bệnh viện.</p>
-        </section>
+        <div class="hero-image">
+            <h1>Chào Mừng Đến Với Bệnh Viện Đa Khoa Y Dược Cổ Truyền Cao Bằng</h1>
+        </div>
 
         <section class="patient-info">
-            <h3>Thông Tin Bệnh Nhân</h3>
-            <form id="patientForm">
-                <label for="fullName">Họ và Tên:</label>
-                <input type="text" id="fullName" required>
-                
-                <label for="idNumber">Số CCCD / Mã BYHT:</label>
-                <input type="text" id="idNumber" required>
+            <h2>Tra Cứu Kết Quả Cận Lâm Sàng</h2>
+            <form id="lookupForm">
+                <label for="patientName">Họ và tên người bệnh:</label>
+                <input type="text" id="patientName" placeholder="Nhập họ tên" required>
 
-                <label for="phoneNumber">Số Điện Thoại:</label>
-                <input type="text" id="phoneNumber" required>
+                <label for="patientID">Số CCCD hoặc mã BYHT:</label>
+                <input type="text" id="patientID" placeholder="Nhập số CCCD hoặc mã BYHT" required>
 
-                <button type="button" id="sendOtp">Gửi Mã OTP</button>
+                <label for="phoneNumber">Số điện thoại đã đăng ký:</label>
+                <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại" required>
 
-                <label for="otp">Nhập Mã OTP:</label>
-                <input type="text" id="otp">
-                <button type="button" id="confirmOtp">Xác Nhận</button>
+                <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
+                <div class="otp-section">
+                    <label for="otp">Nhập mã OTP:</label>
+                    <input type="text" id="otp" placeholder="Nhập mã OTP">
+                    <button type="button" onclick="confirmOTP()">Xác nhận</button>
+                </div>
             </form>
         </section>
 
         <section class="contact-support">
-            <h3>Thông Tin Liên Hệ và Hỗ Trợ</h3>
-            <p>Địa chỉ: Bệnh viện Y học cổ truyền Cao Bằng</p>
-            <p>Hotline: 0333467598</p>
-            <p>Email: support@example.com</p>
-            <p>Hướng dẫn sử dụng website: Vui lòng tham khảo phần hướng dẫn trên trang.</p>
+            <h2>Thông Tin Liên Hệ & Hỗ Trợ</h2>
+            <p>Địa chỉ: Bệnh Viện Đa Khoa Y Dược Cổ Truyền, Cao Bằng</p>
+            <p>Số điện thoại: 0333467598</p>
+            <p>Email hỗ trợ: support@hospital.com</p>
+            <p>Hướng dẫn sử dụng website: Để tra cứu kết quả, vui lòng nhập đầy đủ thông tin ở trên.</p>
+            <div class="chatbox">
+                <p>Hỗ trợ trực tuyến:</p>
+                <button onclick="openChat()">Mở Chat</button>
+            </div>
         </section>
-        
-        <section class="chatbox">
-            <h3>Hỗ Trợ Trực Tuyến</h3>
-            <!-- Bạn có thể tích hợp một dịch vụ chat tại đây -->
-            <div id="chat">Box chat sẽ hiển thị ở đây.</div>
+
+        <section class="intro">
+            <h2>Giới Thiệu</h2>
+            <p>Chức năng tra cứu cho phép người bệnh dễ dàng kiểm tra kết quả cận lâm sàng của mình. Chúng tôi cung cấp nhiều dịch vụ y tế chất lượng cao và hy vọng bạn sẽ hài lòng khi sử dụng dịch vụ của chúng tôi.</p>
+            <p>Cập nhật tin tức mới nhất về bệnh viện tại đây.</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Bệnh Viện Đa Khoa Y Dược Cổ Truyền Cao Bằng</p>
     </footer>
+
+    <script>
+        function sendOTP() {
+            // Thực hiện gửi mã OTP
+            alert("Mã OTP đã được gửi!");
+        }
+        
+        function confirmOTP() {
+            // Thực hiện xác nhận mã OTP
+            alert("Mã OTP đã được xác nhận!");
+        }
+        
+        function openChat() {
+            // Mở chatbox hỗ trợ
+            alert("Chatbox hỗ trợ mở!");
+        }
+    </script>
 </body>
 </html>
