@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết Quả Cận Lâm Sàng</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Kết Quả Cận Lâm Sàng</title>
+    <style>
+        /* CSS cho giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f9; /* Màu nền pastel nhẹ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px; /* Tăng padding để box lớn hơn */
+            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Căn giữa toàn bộ văn bản */
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px; /* Kích thước tiêu đề chính */
+            color: #007bff; /* Màu xanh cho tiêu đề */
+            font-weight: bold; /* Đậm chữ */
+        }
+
+        .results-header {
+            margin: 20px 0;
+            font-size: 24px; /* Kích thước chữ cho tiêu đề kết quả */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            font-weight: bold; /* Đậm chữ */
+        }
+
+        .results-box {
+            border: 2px solid #007bff; /* Đường viền xanh cho khung kết quả */
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #e9f5ff; /* Nền khung sáng */
+        }
+
+        .result-item {
+            font-size: 20px; /* Kích thước chữ cho các kết quả */
+            margin: 10px 0; /* Khoảng cách giữa các kết quả */
+        }
+
+        .pdf-link {
+            color: #007bff; /* Màu xanh cho liên kết PDF */
+            text-decoration: none; /* Bỏ gạch chân */
+        }
+
+        .pdf-link:hover {
+            text-decoration: underline; /* Gạch chân khi hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>SỞ Y TẾ CAO BẰNG</h1>
-            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+            <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
         </header>
-
-        <main>
-            <h3>Kết Quả Cận Lâm Sàng</h3>
-            <table>
-                <tr>
-                    <th>Kết quả siêu âm</th>
-                    <td><button onclick="viewPDF('ultrasound_results.pdf')">Xem PDF</button></td>
-                </tr>
-                <tr>
-                    <th>Kết quả Xquang</th>
-                    <td><button onclick="viewPDF('xray_results.pdf')">Xem PDF</button></td>
-                </tr>
-                <tr>
-                    <th>Kết quả Điện tim</th>
-                    <td><button onclick="viewPDF('ecg_results.pdf')">Xem PDF</button></td>
-                </tr>
-                <tr>
-                    <th>Kết quả Xét nghiệm</th>
-                    <td><button onclick="viewPDF('test_results.pdf')">Xem PDF</button></td>
-                </tr>
-                <tr>
-                    <th>Kết quả Đo mật độ xương</th>
-                    <td><button onclick="viewPDF('bone_density_results.pdf')">Xem PDF</button></td>
-                </tr>
-                <tr>
-                    <th>Kết quả nội soi</th>
-                    <td><button onclick="viewPDF('endoscopy_results.pdf')">Xem PDF</button></td>
-                </tr>
-            </table>
-        </main>
+        <div class="results-header">Kết Quả Cận Lâm Sàng</div>
+        <div class="results-box">
+            <div class="result-item">Kết quả siêu âm <a href="ultrasound_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả Xquang <a href="xray_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả Điện tim <a href="ecg_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả Xét nghiệm <a href="test_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả Đo mật độ xương <a href="bone_density_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả nội soi <a href="endoscopy_result.pdf" class="pdf-link">Xem PDF</a></div>
+        </div>
     </div>
-
     <script>
-        function viewPDF(file) {
-            window.open(file); // Mở file PDF trong tab mới
-        }
+        // Thêm JavaScript nếu cần
     </script>
 </body>
 </html>
