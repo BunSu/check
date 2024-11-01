@@ -58,13 +58,21 @@
         .service-button:hover {
             background-color: #0056b3; /* Màu nền khi hover */
         }
+
+        .service-header {
+            margin-top: 20px;
+            font-size: 24px; /* Kích thước chữ lớn cho tiêu đề dịch vụ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            font-weight: bold; /* Đậm chữ */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Danh sách dịch vụ Cận lâm sàng</h1>
+            <h1>Danh Sách Dịch Vụ Cận Lâm Sàng</h1>
         </header>
+        <div class="service-header">Chọn dịch vụ bạn muốn:</div>
         <div class="services">
             <button class="service-button" onclick="window.location.href='results.html'">Xem kết quả Cận lâm sàng</button>
             <button class="service-button" onclick="window.location.href='image_services.html'">Dịch vụ hình ảnh cận lâm sàng</button>
