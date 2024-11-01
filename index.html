@@ -1,163 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tra cứu kết quả cận lâm sàng</title>
+    <title>Website tra cứu kết quả cận lâm sàng</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input[type="text"], input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        h1, h2 { color: #4CAF50; }
+        input[type="text"], input[type="password"], input[type="date"] {
+            width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            background-color: #4CAF50; color: white; padding: 10px 20px;
+            border: none; border-radius: 5px; cursor: pointer;
         }
-        .result-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-        }
-        .result {
-            margin-bottom: 10px;
-        }
-        .support-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-        }
-        .support-section h2 {
-            margin-bottom: 15px;
-        }
-        .support-section a {
-            display: block;
-            margin-bottom: 10px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .support-section a:hover {
-            text-decoration: underline;
-        }
+        button:hover { background-color: #45a049; }
     </style>
 </head>
 <body>
+    <!-- Trang 1: Tra cứu kết quả -->
     <div class="container">
-        <h1>Tra cứu kết quả cận lâm sàng</h1>
-        <form id="searchForm">
-            <div class="form-group">
-                <label for="fullname">Họ và tên người bệnh <span style="color: red;">*</span></label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-            <div class="form-group">
-                <label for="healthInsurance">Mã bảo hiểm y tế <span style="color: red;">*</span></label>
-                <input type="text" id="healthInsurance" name="healthInsurance" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Số điện thoại đã đăng ký tại Bệnh viện <span style="color: red;">*</span></label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
-            </div>
-            <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
+        <h1>Website tra cứu kết quả cận lâm sàng</h1>
+        <img src="logo.png" alt="Logo" width="100">
+        <h2>Thông tin bệnh nhân</h2>
+        <form action="trang2.html" method="POST">
+            <label>Họ và tên người bệnh</label>
+            <input type="text" name="name" required>
+            <label>Số CCCD hoặc mã BYHT</label>
+            <input type="text" name="id" required>
+            <label>Số điện thoại đã đăng ký</label>
+            <input type="text" name="phone" required>
+            <button type="button">Gửi mã OTP</button>
+            <label>Nhập mã OTP</label>
+            <input type="password" name="otp" required>
+            <button type="submit">Xác nhận</button>
         </form>
-
-        <div id="otpForm" style="display: none;">
-            <div class="form-group">
-                <label for="otp">Nhập mã OTP đã nhận</label>
-                <input type="text" id="otp" name="otp">
-            </div>
-            <button type="button" onclick="verifyOTP()">Xác nhận OTP</button>
-        </div>
-
-        <div id="resultContainer" class="result-container" style="display: none;">
-            <h2>Kết quả cận lâm sàng</h2>
-            <div class="result" id="testType"></div>
-            <div class="result" id="testDate"></div>
-            <div class="result" id="normalValues"></div>
-            <div class="result" id="testResult"></div>
-            <div class="result" id="doctorNote"></div>
-            <button onclick="exportToPDF()">Xuất PDF</button>
-        </div>
-
-        <div class="support-section">
-            <h2>Hỗ trợ</h2>
-            <a href="https://example.com/feedback" target="_blank">Góp ý kiến phản hồi, tư vấn về các chỉ số và các yếu tố liên quan</a>
-            <a href="tel:0333467598">Hotline: 0333467598</a>
-            <a href="https://example.com/guide" target="_blank">Hướng dẫn tra cứu kết quả trên website</a>
-        </div>
     </div>
 
-    <script>
-        function sendOTP() {
-            // Gửi yêu cầu tới server để gửi mã OTP
-            // Đoạn mã này mô phỏng, bạn cần thay đổi để gửi yêu cầu thực tế
-            alert('Mã OTP đã được gửi đến số điện thoại của bạn.');
+    <!-- Trang 2: Hồ sơ bệnh án -->
+    <div class="container">
+        <h1>HỒ SƠ BỆNH ÁN</h1>
+        <img src="logo.png" alt="Logo" width="100">
+        <p>Họ và tên người bệnh: Vương Quốc Tuấn</p>
+        <p>Mã bệnh án: 123456</p>
+        <button onclick="window.location.href='trang3.html'">Xem kết quả Cận lâm sàng</button>
+    </div>
 
-            // Hiển thị form nhập mã OTP
-            document.getElementById('otpForm').style.display = 'block';
-        }
+    <!-- Trang 3: Danh sách dịch vụ Cận lâm sàng -->
+    <div class="container">
+        <h1>Danh sách dịch vụ Cận lâm sàng</h1>
+        <h2>Chọn loại dịch vụ</h2>
+        <button onclick="window.location.href='trang4.html'">Xem hình ảnh (X-quang, CLVT, MRI, siêu âm, nội soi...)</button>
+        <button onclick="window.location.href='trang4.html'">Xem kết quả Cận lâm sàng (Xét nghiệm, chẩn đoán hình ảnh...)</button>
+    </div>
 
-        function verifyOTP() {
-            // Lấy giá trị nhập vào từ form
-            var otp = document.getElementById('otp').value;
+    <!-- Trang 4: Hồ sơ người bệnh -->
+    <div class="container">
+        <h1>Hồ sơ người bệnh</h1>
+        <p>Người bệnh: Vương Quốc Tuấn</p>
+        <label>Chọn ngày khám, điều trị</label>
+        <input type="date" name="date" required>
+        <button onclick="window.location.href='trang5.html'">Xác nhận</button>
+    </div>
 
-            // Gửi yêu cầu xác thực OTP tới server
-            // Đoạn mã này mô phỏng, bạn cần thay đổi để gửi yêu cầu thực tế
-            if (otp === '') {
-                alert('Vui lòng nhập mã OTP.');
-                return;
-            }
-
-            // Xác thực thành công, hiển thị kết quả
-            document.getElementById('resultContainer').style.display = 'block';
-            displayResult(); // Hàm để hiển thị kết quả
-        }
-
-        function displayResult() {
-            // Hiển thị kết quả mô phỏng (sử dụng dữ liệu cứng)
-            document.getElementById('testType').innerHTML = "<strong>Loại xét nghiệm:</strong> Xét nghiệm ABC";
-            document.getElementById('testDate').innerHTML = "<strong>Ngày thực hiện:</strong> 2024-06-24";
-            document.getElementById('normalValues').innerHTML = "<strong>Giá trị bình thường:</strong> 10 - 50";
-            document.getElementById('testResult').innerHTML = "<strong>Kết quả xét nghiệm:</strong> 30";
-            document.getElementById('doctorNote').innerHTML = "<strong>Ghi chú:</strong> Không có ghi chú.";
-        }
-
-        function exportToPDF() {
-            // Code để xuất kết quả ra file PDF
-            alert('Đã xuất PDF thành công!');
-        }
-    </script>
+    <!-- Trang 5: Kết quả cận lâm sàng -->
+    <div class="container">
+        <h1>Kết quả cận lâm sàng</h1>
+        <h2>Ngày: 27/09/2024</h2>
+        <ul>
+            <li>Kết quả Siêu âm - <a href="ketqua_sieuam.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả X-quang - <a href="ketqua_xquang.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Điện tim - <a href="ketqua_dientim.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Xét nghiệm - <a href="ketqua_xetnghiem.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Đo mật độ xương - <a href="ketqua_xuong.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Nội soi - <a href="ketqua_noisoi.pdf" target="_blank">Xem PDF</a></li>
+        </ul>
+    </div>
 </body>
 </html>
