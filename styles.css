@@ -1,130 +1,170 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e0f7fa; /* Màu nền xanh nhạt tươi sáng */
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sở Y Tế Cao Bằng - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Kết nối CSS -->
+    <style>
+        /* CSS cho giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f9; /* Màu nền pastel nhẹ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            margin: 0;
+            padding: 0;
+        }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #ffffff; /* Màu nền trắng cho container */
-    padding: 30px; /* Thêm padding cho container */
-    border-radius: 10px; /* Bo tròn góc cho container */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng cho container */
-    text-align: center; /* Căn giữa tất cả nội dung trong container */
-}
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-header {
-    margin-bottom: 30px; /* Khoảng cách dưới tiêu đề */
-}
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    color: #00796b; /* Màu xanh lá đậm cho tiêu đề chính */
-    font-size: 2.5em; /* Kích thước chữ lớn */
-}
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Màu xanh cho tiêu đề */
+        }
 
-h2 {
-    color: #0288d1; /* Màu xanh dương cho tiêu đề phụ */
-    font-size: 1.5em; /* Kích thước chữ vừa */
-}
+        h2 {
+            font-size: 18px;
+            color: #007bff; /* Màu xanh cho tiêu đề phụ */
+        }
 
-h3 {
-    color: #f57c00; /* Màu cam cho tiêu đề nhỏ */
-    font-size: 1.3em; /* Kích thước chữ vừa */
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
 
-label {
-    margin-top: 20px; /* Khoảng cách trên các nhãn */
-    font-size: 1.2em; /* Kích thước chữ lớn hơn */
-    color: #00796b; /* Màu xanh lá đậm cho nhãn */
-}
+        input[type="text"],
+        input[type="tel"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-input[type="text"], input[type="tel"], input[type="date"] {
-    padding: 12px; /* Thêm padding cho input */
-    font-size: 1em; /* Kích thước chữ trong input */
-    border: 2px solid #81d4fa; /* Đường viền màu xanh nhạt cho input */
-    border-radius: 5px; /* Bo tròn góc cho input */
-    margin-top: 5px; /* Khoảng cách giữa nhãn và input */
-    transition: border-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
-}
+        button {
+            padding: 10px;
+            background-color: #007bff; /* Màu nền nút */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-input[type="text"]:focus, input[type="tel"]:focus, input[type="date"]:focus {
-    border-color: #4db6ac; /* Màu viền khi input được chọn */
-    outline: none; /* Xóa outline mặc định */
-}
+        button:hover {
+            background-color: #0056b3; /* Màu nền nút khi hover */
+        }
 
-button {
-    padding: 12px; /* Thêm padding cho nút */
-    font-size: 1.2em; /* Kích thước chữ lớn hơn */
-    margin-top: 20px; /* Khoảng cách trên nút */
-    background-color: #4caf50; /* Màu nền xanh lá cho nút */
-    color: white; /* Màu chữ cho nút */
-    border: none; /* Xóa đường viền */
-    border-radius: 5px; /* Bo tròn góc cho nút */
-    cursor: pointer; /* Con trỏ khi hover qua nút */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
-}
+        #chatbox {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: #f9f9f9; /* Màu nền hộp chat */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: none; /* Ẩn hộp chat theo mặc định */
+        }
 
-button:hover {
-    background-color: #388e3c; /* Màu nền khi hover qua nút */
-}
+        #chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+        </header>
+        <form id="otp-form">
+            <label for="fullname">Họ và tên:</label>
+            <input type="text" id="fullname" required>
 
-#otp-message {
-    margin-top: 10px; /* Khoảng cách trên thông báo OTP */
-    font-size: 1em; /* Kích thước chữ thông báo */
-    color: #f44336; /* Màu đỏ cho thông báo lỗi */
-    font-weight: bold; /* Chữ đậm cho thông báo lỗi */
-}
+            <label for="cccd">CCCD/Mã số BHYT:</label>
+            <input type="text" id="cccd" required>
 
-#chatbox {
-    margin-top: 20px; /* Khoảng cách trên hộp chat */
-    padding: 10px;
-    background-color: #b3e5fc; /* Màu nền hộp chat */
-    border: 1px solid #81d4fa; /* Đường viền hộp chat */
-    border-radius: 5px; /* Bo tròn góc cho hộp chat */
-}
+            <label for="phone">Số điện thoại đã đăng ký:</label>
+            <input type="tel" id="phone" required>
 
-.table {
-    width: 100%;
-    border-collapse: collapse; /* Gộp các đường biên của bảng */
-    margin-top: 20px; /* Khoảng cách trên bảng */
-}
+            <button type="button" id="send-otp">Gửi mã OTP</button>
 
-.table th, .table td {
-    border: 1px solid #dddddd; /* Đường viền màu xám cho các ô */
-    text-align: center; /* Căn giữa chữ trong ô */
-    padding: 8px; /* Padding cho ô */
-}
+            <label for="otp">Nhập mã OTP:</label>
+            <input type="text" id="otp" required>
 
-.table th {
-    background-color: #4caf50; /* Màu nền cho tiêu đề bảng */
-    color: white; /* Màu chữ cho tiêu đề bảng */
-}
+            <button type="submit">Xác nhận</button>
+            <p id="otp-message"></p> <!-- Thông báo mã OTP -->
+        </form>
+        <div id="chatbox">
+            <h3>Hướng dẫn sử dụng</h3>
+            <p>Để sử dụng dịch vụ tra cứu kết quả bệnh án, vui lòng làm theo các bước sau:</p>
+            <ol>
+                <li>Nhập họ và tên, CCCD/Mã số BHYT và số điện thoại đã đăng ký.</li>
+                <li>Nhấn nút "Gửi mã OTP" để nhận mã xác nhận qua SMS.</li>
+                <li>Nhập mã OTP vào ô tương ứng và nhấn nút "Xác nhận".</li>
+            </ol>
+            <p><strong>Hotline: 0333467598</strong></p>
+        </div>
+        <button id="chat-toggle">💬</button> <!-- Nút để mở/đóng hộp chat -->
+    </div>
 
-.table tr:nth-child(even) {
-    background-color: #f2f2f2; /* Màu nền ô chẵn */
-}
+    <script>
+        document.getElementById("send-otp").onclick = function() {
+            var phoneNumber = document.getElementById("phone").value;
+            if (phoneNumber) {
+                // Thực hiện gửi mã OTP đến số điện thoại (giả định gửi thành công)
+                alert("Mã OTP đã được gửi đến số điện thoại: " + phoneNumber);
+            } else {
+                alert("Vui lòng nhập số điện thoại trước khi gửi mã OTP.");
+            }
+        };
 
-.table tr:hover {
-    background-color: #c8e6c9; /* Màu nền khi hover qua hàng */
-}
+        document.getElementById("otp-form").onsubmit = function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-.image-preview {
-    display: flex; /* Sử dụng Flexbox để căn chỉnh hình ảnh */
-    flex-wrap: wrap; /* Cho phép dòng mới khi không còn chỗ */
-    justify-content: center; /* Căn giữa hình ảnh */
-    margin-top: 20px; /* Khoảng cách trên hình ảnh */
-}
+            // Chuyển đến trang hồ sơ bệnh án mà không cần kiểm tra mã OTP
+            window.location.href = "patient_record.html"; 
+        };
 
-.image-preview img {
-    max-width: 200px; /* Kích thước tối đa cho hình ảnh */
-    margin: 10px; /* Khoảng cách giữa các hình ảnh */
-    border-radius: 10px; /* Bo tròn góc cho hình ảnh */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho hình ảnh */
-}
+        // Hàm để mở/đóng hộp chat
+        document.getElementById("chat-toggle").onclick = function() {
+            var chatbox = document.getElementById("chatbox");
+            if (chatbox.style.display === "none" || chatbox.style.display === "") {
+                chatbox.style.display = "block"; // Hiển thị hộp chat
+            } else {
+                chatbox.style.display = "none"; // Ẩn hộp chat
+            }
+        };
+    </script>
+</body>
+</html>
