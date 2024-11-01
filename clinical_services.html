@@ -16,21 +16,17 @@
         <main>
             <h3>Danh Sách Dịch Vụ Cận Lâm Sàng</h3>
             <button id="view-results-button">Xem kết quả Cận lâm sàng</button>
-            <h4>Dịch vụ hình ảnh:</h4>
-            <ul>
-                <li><a href="image_viewer.html?service=xquang">Xquang</a></li>
-                <li><a href="image_viewer.html?service=clvt">CLVT</a></li>
-                <li><a href="image_viewer.html?service=mri">MRI</a></li>
-                <li><a href="image_viewer.html?service=sieu_am">Siêu âm</a></li>
-                <li><a href="image_viewer.html?service=video_noi_soi">Video nội soi dạ dày</a></li>
-                <li><a href="image_viewer.html?service=video_noi_soi_truc_trang">Video nội soi trực tràng</a></li>
-            </ul>
+            <button id="imaging-services-button">Dịch vụ hình ảnh cận lâm sàng</button>
         </main>
     </div>
 
     <script>
         document.getElementById("view-results-button").onclick = function() {
             window.location.href = "results.html"; // Chuyển đến trang kết quả
+        };
+
+        document.getElementById("imaging-services-button").onclick = function() {
+            window.location.href = "imaging_services.html"; // Chuyển đến trang dịch vụ hình ảnh cận lâm sàng
         };
     </script>
 </body>
