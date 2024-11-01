@@ -15,6 +15,17 @@
             padding: 0;
         }
 
+        .header {
+            text-align: center; /* Căn giữa tiêu đề */
+            margin: 20px 0; /* Khoảng cách cho tiêu đề */
+        }
+
+        .header h1 {
+            font-size: 24px; /* Kích thước tiêu đề chính nhỏ hơn */
+            color: #007bff; /* Màu xanh cho tiêu đề */
+            margin: 0; /* Bỏ margin để gần nhau */
+        }
+
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -25,19 +36,9 @@
             text-align: center; /* Căn giữa toàn bộ văn bản */
         }
 
-        header {
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 28px; /* Kích thước tiêu đề chính */
-            color: #007bff; /* Màu xanh cho tiêu đề */
-            font-weight: bold; /* Đậm chữ */
-        }
-
         .results-header {
             margin: 20px 0;
-            font-size: 24px; /* Kích thước chữ cho tiêu đề kết quả */
+            font-size: 28px; /* Kích thước chữ cho tiêu đề kết quả lớn hơn */
             color: #333; /* Màu chữ tối để dễ đọc */
             font-weight: bold; /* Đậm chữ */
         }
@@ -65,23 +66,27 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>SỞ Y TẾ CAO BẰNG</h1>
+        <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
+    </div>
     <div class="container">
-        <header>
-            <h1>SỞ Y TẾ CAO BẰNG</h1>
-            <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
-        </header>
         <div class="results-header">Kết Quả Cận Lâm Sàng</div>
         <div class="results-box">
-            <div class="result-item">Kết quả siêu âm <a href="ultrasound_result.pdf" class="pdf-link">Xem PDF</a></div>
-            <div class="result-item">Kết quả Xquang <a href="xray_result.pdf" class="pdf-link">Xem PDF</a></div>
-            <div class="result-item">Kết quả Điện tim <a href="ecg_result.pdf" class="pdf-link">Xem PDF</a></div>
-            <div class="result-item">Kết quả Xét nghiệm <a href="test_result.pdf" class="pdf-link">Xem PDF</a></div>
-            <div class="result-item">Kết quả Đo mật độ xương <a href="bone_density_result.pdf" class="pdf-link">Xem PDF</a></div>
-            <div class="result-item">Kết quả nội soi <a href="endoscopy_result.pdf" class="pdf-link">Xem PDF</a></div>
+            <div class="result-item">Kết quả siêu âm <a href="ultrasound_result.pdf" class="pdf-link" onclick="openPdf(event, 'ultrasound_result.pdf')">Xem PDF</a></div>
+            <div class="result-item">Kết quả Xquang <a href="xray_result.pdf" class="pdf-link" onclick="openPdf(event, 'xray_result.pdf')">Xem PDF</a></div>
+            <div class="result-item">Kết quả Điện tim <a href="ecg_result.pdf" class="pdf-link" onclick="openPdf(event, 'ecg_result.pdf')">Xem PDF</a></div>
+            <div class="result-item">Kết quả Xét nghiệm <a href="test_result.pdf" class="pdf-link" onclick="openPdf(event, 'test_result.pdf')">Xem PDF</a></div>
+            <div class="result-item">Kết quả Đo mật độ xương <a href="bone_density_result.pdf" class="pdf-link" onclick="openPdf(event, 'bone_density_result.pdf')">Xem PDF</a></div>
+            <div class="result-item">Kết quả nội soi <a href="endoscopy_result.pdf" class="pdf-link" onclick="openPdf(event, 'endoscopy_result.pdf')">Xem PDF</a></div>
         </div>
     </div>
     <script>
-        // Thêm JavaScript nếu cần
+        function openPdf(event, pdfUrl) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            alert('Đang mở tài liệu: ' + pdfUrl); // Hiển thị thông báo
+            window.open(pdfUrl, '_blank'); // Mở tài liệu PDF trong tab mới
+        }
     </script>
 </body>
 </html>
