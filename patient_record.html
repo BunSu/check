@@ -42,13 +42,10 @@
             font-weight: bold; /* Đậm chữ */
         }
 
-        .input-field {
+        .info {
             margin: 10px 0;
-            padding: 10px;
-            width: 80%; /* Độ rộng của các trường nhập */
-            border-radius: 5px;
-            border: 1px solid #0056b3; /* Đường viền xanh */
-            font-size: 16px; /* Kích thước chữ cho các trường nhập */
+            font-size: 20px; /* Kích thước chữ cho thông tin bệnh nhân */
+            color: #333; /* Màu chữ tối để dễ đọc */
         }
 
         .date-picker {
@@ -83,12 +80,10 @@
     </div>
     <div class="container">
         <div class="patient-record-header">HỒ SƠ BỆNH ÁN</div>
-        <form>
-            <input type="text" class="input-field" value="Họ và tên người bệnh: Vương Quốc Tuân" readonly>
-            <input type="text" class="input-field" value="Năm sinh: 1998" readonly>
-            <input type="date" class="date-picker" required>
-            <button type="submit" class="submit-button">Xem kết quả Cận lâm sàng</button>
-        </form>
+        <div class="info">Họ và tên người bệnh: Vương Quốc Tuân</div>
+        <div class="info">Năm sinh: 1998</div>
+        <input type="date" class="date-picker" required>
+        <button type="submit" class="submit-button">Xem kết quả Cận lâm sàng</button>
     </div>
 </body>
 </html>
