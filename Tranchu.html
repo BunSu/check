@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN</h2>
+            <nav>
+                <a href="index.html">Trang Chủ</a>
+                <a href="lookup.html">Tra Cứu Kết Quả</a>
+                <a href="https://facebook.com/yourfanpage" target="_blank">Fanpage</a>
+                <a href="https://facebook.com/yourfacebook" target="_blank">Facebook</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h3>Chào Mừng Đến Với Hệ Thống Tra Cứu Kết Quả Cận Lâm Sàng</h3>
+            <p>Tin tức và các dịch vụ nổi bật của bệnh viện.</p>
+        </section>
+
+        <section class="patient-info">
+            <h3>Thông Tin Bệnh Nhân</h3>
+            <form id="patientForm">
+                <label for="fullName">Họ và Tên:</label>
+                <input type="text" id="fullName" required>
+                
+                <label for="idNumber">Số CCCD / Mã BYHT:</label>
+                <input type="text" id="idNumber" required>
+
+                <label for="phoneNumber">Số Điện Thoại:</label>
+                <input type="text" id="phoneNumber" required>
+
+                <button type="button" id="sendOtp">Gửi Mã OTP</button>
+
+                <label for="otp">Nhập Mã OTP:</label>
+                <input type="text" id="otp">
+                <button type="button" id="confirmOtp">Xác Nhận</button>
+            </form>
+        </section>
+
+        <section class="contact-support">
+            <h3>Thông Tin Liên Hệ và Hỗ Trợ</h3>
+            <p>Địa chỉ: Bệnh viện Y học cổ truyền Cao Bằng</p>
+            <p>Hotline: 0333467598</p>
+            <p>Email: support@example.com</p>
+            <p>Hướng dẫn sử dụng website: Vui lòng tham khảo phần hướng dẫn trên trang.</p>
+        </section>
+        
+        <section class="chatbox">
+            <h3>Hỗ Trợ Trực Tuyến</h3>
+            <div id="chat">Box chat sẽ hiển thị ở đây.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bệnh Viện Đa Khoa Y Dược Cổ Truyền Cao Bằng</p>
+    </footer>
+</body>
+</html>
