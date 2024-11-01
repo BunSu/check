@@ -7,42 +7,57 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>SỞ Y TẾ CAO BẰNG</h1>
             <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
-        <h3>Đăng Nhập Thông Tin</h3>
-        <form id="login-form">
-            <label for="full-name">Họ và tên:</label>
-            <input type="text" id="full-name" required>
+        <main>
+            <form id="otp-form">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" required>
 
-            <label for="id-number">CCCD/Mã số BHYT:</label>
-            <input type="text" id="id-number" required>
+                <label for="id-number">CCCD/Mã số BHYT:</label>
+                <input type="text" id="id-number" required>
 
-            <label for="phone-number">Số điện thoại đã đăng ký:</label>
-            <input type="text" id="phone-number" required>
+                <label for="phone">Số điện thoại đã đăng ký:</label>
+                <input type="tel" id="phone" required>
 
-            <button type="submit">Gửi</button>
-            <label for="otp">Nhập mã OTP:</label>
-            <input type="text" id="otp" required>
-            <button type="button" id="confirm-otp">Xác nhận</button>
-        </form>
+                <button type="button" id="send-otp-button">Gửi mã OTP</button>
 
-        <div class="support">
-            <p>Hướng dẫn sử dụng</p>
+                <label for="otp">Nhập mã OTP:</label>
+                <input type="text" id="otp" required>
+
+                <button type="button" id="confirm-otp-button">Xác nhận</button>
+            </form>
+
+            <div id="otp-message" style="color: red; margin-top: 10px;"></div>
+
+            <h4>Hướng dẫn sử dụng</h4>
             <p>Hotline: 0333467598</p>
             <div class="chatbox">Box chat</div>
-        </div>
-    </main>
+        </main>
+    </div>
 
-    <footer>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-    </footer>
+    <script>
+        let otpCode = ''; // Biến để lưu mã OTP
 
-    <script src="script.js"></script>
+        document.getElementById("send-otp-button").onclick = function() {
+            // Giả lập việc gửi mã OTP
+            otpCode = Math.floor(100000 + Math.random() * 900000).toString(); // Tạo mã OTP 6 chữ số
+            document.getElementById("otp-message").innerText = "Đã gửi mã OTP về số điện thoại: " + document.getElementById("phone").value;
+            console.log("Mã OTP:", otpCode); // In ra mã OTP để kiểm tra (có thể xóa khi hoàn thiện)
+        };
+
+        document.getElementById("confirm-otp-button").onclick = function() {
+            const enteredOtp = document.getElementById("otp").value;
+            if (enteredOtp === otpCode) {
+                window.location.href = "patient_record.html"; // Chuyển đến trang hồ sơ bệnh án
+            } else {
+                document.getElementById("otp-message").innerText = "Mã OTP không chính xác. Vui lòng kiểm tra lại.";
+            }
+        };
+    </script>
 </body>
 </html>
