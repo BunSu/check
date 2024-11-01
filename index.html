@@ -6,13 +6,86 @@
     <title>Sở Y Tế Cao Bằng - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Kết nối CSS -->
     <style>
-        /* CSS cho hộp chat mini */
+        /* CSS cho giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f9; /* Màu nền pastel nhẹ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px; /* Tăng padding để box lớn hơn */
+            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px; /* Tăng kích thước tiêu đề chính */
+            color: #007bff; /* Màu xanh cho tiêu đề */
+        }
+
+        h2 {
+            font-size: 22px; /* Tăng kích thước tiêu đề phụ */
+            color: #007bff; /* Màu xanh cho tiêu đề phụ */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between; /* Căn giữa các trường trên một dòng */
+            margin-bottom: 15px; /* Khoảng cách giữa các nhóm trường */
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            flex: 1; /* Cho phép input chiếm không gian còn lại */
+            padding: 12px; /* Tăng kích thước padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px; /* Khoảng cách giữa các trường */
+        }
+
+        button {
+            padding: 12px;
+            background-color: #007bff; /* Màu nền nút */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Màu nền nút khi hover */
+        }
+
         #chatbox {
             position: fixed;
-            bottom: 20px;
+            bottom: 80px;
             right: 20px;
             width: 300px;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Màu nền hộp chat */
             border: 1px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -43,19 +116,26 @@
             <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
         </header>
         <form id="otp-form">
-            <label for="fullname">Họ và tên:</label>
-            <input type="text" id="fullname" required>
+            <div class="input-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" required>
+            </div>
 
-            <label for="cccd">CCCD/Mã số BHYT:</label>
-            <input type="text" id="cccd" required>
+            <div class="input-group">
+                <label for="cccd">CCCD/Mã số BHYT:</label>
+                <input type="text" id="cccd" required>
+            </div>
 
-            <label for="phone">Số điện thoại đã đăng ký:</label>
-            <input type="tel" id="phone" required>
+            <div class="input-group">
+                <label for="phone">Số điện thoại đã đăng ký:</label>
+                <input type="tel" id="phone" required>
+                <button type="button" id="send-otp">Gửi mã OTP</button>
+            </div>
 
-            <button type="button" id="send-otp">Gửi mã OTP</button>
-
-            <label for="otp">Nhập mã OTP:</label>
-            <input type="text" id="otp" required>
+            <div class="input-group">
+                <label for="otp">Nhập mã OTP:</label>
+                <input type="text" id="otp" required>
+            </div>
 
             <button type="submit">Xác nhận</button>
             <p id="otp-message"></p> <!-- Thông báo mã OTP -->
