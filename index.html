@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xác Thực Tài Khoản</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TRA CỨU KẾT QUẢ CẬN LÂM SÀNG TRỰC TUYẾN</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Thông Tin Người Bệnh</h2>
-        <form id="verificationForm">
-            <label for="fullname">Họ và Tên:</label>
+    <!-- Header với tiêu đề và menu điều hướng -->
+    <header>
+        <h1>TRA CỨU KẾT QUẢ CẬN LÂM SÀNG TRỰC TUYẾN</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Link Bệnh viện</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Tra cứu</a></li>
+                <li><a href="#">Hướng dẫn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Form thông tin người bệnh -->
+    <section class="search-section">
+        <h2>Tra cứu thông tin người bệnh</h2>
+        <form action="verify.html" method="post">
+            <label for="fullname">Họ và tên:</label>
             <input type="text" id="fullname" name="fullname" required>
 
-            <label for="id">Số CCCD hoặc Mã BHYT:</label>
-            <input type="text" id="id" name="id" required>
+            <label for="idcode">Số CCCD hoặc mã BYHT:</label>
+            <input type="text" id="idcode" name="idcode" required>
 
-            <label for="phone">Số Điện Thoại Đã Đăng Ký:</label>
+            <label for="phone">Số điện thoại đã đăng ký:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <!-- Nút gửi mã OTP -->
-            <button type="button" onclick="sendOTP()">Gửi Mã OTP</button>
+            <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
 
-            <!-- Ô trống nhập mã OTP và nút xác nhận -->
-            <div id="otpSection" style="display: none;">
-                <label for="otp">Nhập Mã OTP:</label>
-                <input type="text" id="otp" name="otp" required>
-                <button type="button" onclick="verifyOTP()">Xác Nhận</button>
-            </div>
+            <label for="otp">Nhập mã OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+
+            <button type="submit">Xác nhận</button>
         </form>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script>
+        function sendOTP() {
+            alert("Mã OTP đã được gửi đến số điện thoại đăng ký.");
+        }
+    </script>
 </body>
 </html>
