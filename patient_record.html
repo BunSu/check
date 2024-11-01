@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ Sơ Bệnh Án</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function goToClinicalResults() {
-            window.location.href = "clinical_services.html"; // Chuyển đến trang dịch vụ cận lâm sàng
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG</h2>
+        <div class="container">
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+        </div>
     </header>
-    <section class="patient-record">
-        <h2>HỒ SƠ BỆNH ÁN</h2>
-        <p>Người bệnh: <strong>Vương Quốc Tuấn</strong></p>
-        <p>Mã bệnh án: <strong>123456</strong></p>
-        <button onclick="goToClinicalResults()">Xem kết quả Cận lâm sàng</button>
-    </section>
+
+    <main class="container">
+        <h3>Hồ Sơ Bệnh Án</h3>
+        <p>Người bệnh: Vương Quốc Tuấn, 1998</p>
+
+        <div class="date-selection">
+            <label for="appointment-date">Chọn ngày khám, điều trị:</label>
+            <input type="date" id="appointment-date" required>
+            <label for="appointment-time">Chọn thời gian:</label>
+            <input type="time" id="appointment-time" required>
+            <button id="submit-appointment">Xác nhận</button>
+        </div>
+    </main>
+
+    <footer>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
