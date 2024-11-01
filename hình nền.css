@@ -1,0 +1,5 @@
+body {
+    background-image: url('light-background.jpg'); /* Hình nền nhẹ */
+    background-size: cover;
+    background-position: center;
+}
