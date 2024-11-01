@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Hồ Sơ Bệnh Án</title>
+    <title>Danh Sách Dịch Vụ Cận Lâm Sàng</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,42 +35,27 @@
             text-align: center;
         }
 
-        .patient-record-header {
+        .services-header {
             margin: 20px 0;
-            font-size: 28px; /* Kích thước chữ cho tiêu đề hồ sơ bệnh án lớn hơn */
+            font-size: 28px; /* Kích thước chữ cho tiêu đề dịch vụ lớn hơn */
             color: #333; /* Màu chữ tối để dễ đọc */
             font-weight: bold; /* Đậm chữ */
         }
 
-        .input-field {
-            margin: 10px 0;
-            padding: 10px;
-            width: 80%; /* Độ rộng của các trường nhập */
-            border-radius: 5px;
-            border: 1px solid #0056b3; /* Đường viền xanh */
+        .service-item {
+            font-size: 20px; /* Kích thước chữ cho các dịch vụ */
+            margin: 10px 0; /* Khoảng cách giữa các dịch vụ */
+            color: #0056b3; /* Màu xanh cho dịch vụ */
         }
 
-        .date-picker {
-            margin: 10px 0;
-            padding: 10px;
-            width: 80%; /* Độ rộng của lịch */
-            border-radius: 5px;
-            border: 1px solid #0056b3; /* Đường viền xanh */
+        .service-link {
+            text-decoration: none; /* Bỏ gạch chân */
+            font-weight: bold; /* Đậm chữ cho liên kết */
+            color: #0056b3; /* Màu xanh cho liên kết */
         }
 
-        .submit-button {
-            background-color: #0056b3; /* Nền xanh đậm */
-            color: white; /* Chữ trắng */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px; /* Kích thước chữ cho nút */
-            margin-top: 10px;
-        }
-
-        .submit-button:hover {
-            background-color: #003d80; /* Màu nền khi hover */
+        .service-link:hover {
+            text-decoration: underline; /* Gạch chân khi hover */
         }
     </style>
 </head>
@@ -80,14 +65,13 @@
         <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
     </div>
     <div class="container">
-        <div class="patient-record-header">HỒ SƠ BỆNH ÁN</div>
-        <form>
-            <input type="text" class="input-field" placeholder="Họ và tên người bệnh: Vương Quốc Tuân" required>
-            <input type="text" class="input-field" placeholder="Mã bệnh án: 123456" required>
-            <input type="text" class="input-field" placeholder="Năm sinh: 1998" readonly>
-            <input type="date" class="date-picker" required>
-            <button type="submit" class="submit-button">Xem kết quả Cận lâm sàng</button>
-        </form>
+        <div class="services-header">DANH SÁCH DỊCH VỤ CẬN LÂM SÀNG</div>
+        <div class="service-item">
+            <a href="results.html" class="service-link">Xem kết quả Cận lâm sàng</a>
+        </div>
+        <div class="service-item">
+            <a href="imaging_services.html" class="service-link">Dịch vụ hình ảnh cận lâm sàng</a>
+        </div>
     </div>
 </body>
 </html>
