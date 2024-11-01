@@ -3,33 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kết Quả Khám Chữa</title>
+    <title>Kết Quả Cận Lâm Sàng</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>SỞ Y TẾ CAO BẰNG</h1>
             <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
-        <h3>Kết Quả Khám Chữa</h3>
-        <div class="results-list">
-            <p>Kết quả siêu âm (27/09/2024) <a href="ultrasound_result.pdf" class="pdf-link">Xem kết quả</a></p>
-            <p>Kết quả Xquang (27/09/2024) <a href="xray_result.pdf" class="pdf-link">Xem kết quả</a></p>
-            <p>Kết quả Điện tim (27/09/2024) <a href="ecg_result.pdf" class="pdf-link">Xem kết quả</a></p>
-            <p>Kết quả Xét nghiệm (27/09/2024) <a href="test_result.pdf" class="pdf-link">Xem kết quả</a></p>
-            <p>Kết quả Đo mật độ xương (27/09/2024) <a href="bone_density_result.pdf" class="pdf-link">Xem kết quả</a></p>
-            <p>Kết quả nội soi (27/09/2024) <a href="endoscopy_result.pdf" class="pdf-link">Xem kết quả</a></p>
-        </div>
-    </main>
+        <main>
+            <h3>Kết Quả Cận Lâm Sàng</h3>
+            <table>
+                <tr>
+                    <th>Kết quả siêu âm</th>
+                    <td><button onclick="viewPDF('ultrasound_results.pdf')">Xem PDF</button></td>
+                </tr>
+                <tr>
+                    <th>Kết quả Xquang</th>
+                    <td><button onclick="viewPDF('xray_results.pdf')">Xem PDF</button></td>
+                </tr>
+                <tr>
+                    <th>Kết quả Điện tim</th>
+                    <td><button onclick="viewPDF('ecg_results.pdf')">Xem PDF</button></td>
+                </tr>
+                <tr>
+                    <th>Kết quả Xét nghiệm</th>
+                    <td><button onclick="viewPDF('test_results.pdf')">Xem PDF</button></td>
+                </tr>
+                <tr>
+                    <th>Kết quả Đo mật độ xương</th>
+                    <td><button onclick="viewPDF('bone_density_results.pdf')">Xem PDF</button></td>
+                </tr>
+                <tr>
+                    <th>Kết quả nội soi</th>
+                    <td><button onclick="viewPDF('endoscopy_results.pdf')">Xem PDF</button></td>
+                </tr>
+            </table>
+        </main>
+    </div>
 
-    <footer>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        function viewPDF(file) {
+            window.open(file); // Mở file PDF trong tab mới
+        }
+    </script>
 </body>
 </html>
