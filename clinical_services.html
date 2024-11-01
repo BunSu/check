@@ -30,8 +30,16 @@
         }
 
         h1 {
-            font-size: 28px; /* Tăng kích thước tiêu đề chính */
+            font-size: 32px; /* Tăng kích thước tiêu đề chính */
             color: #007bff; /* Màu xanh cho tiêu đề */
+            font-weight: bold; /* Đậm chữ */
+        }
+
+        .service-header {
+            margin-top: 20px;
+            font-size: 26px; /* Tăng kích thước chữ cho tiêu đề dịch vụ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            font-weight: bold; /* Đậm chữ */
         }
 
         .services {
@@ -43,7 +51,7 @@
 
         .service-button {
             padding: 15px 30px; /* Tăng kích thước padding */
-            font-size: 18px; /* Tăng kích thước chữ */
+            font-size: 20px; /* Tăng kích thước chữ cho nút */
             background-color: #007bff; /* Màu nền xanh */
             color: white;
             border: none;
@@ -58,13 +66,6 @@
         .service-button:hover {
             background-color: #0056b3; /* Màu nền khi hover */
         }
-
-        .service-header {
-            margin-top: 20px;
-            font-size: 24px; /* Kích thước chữ lớn cho tiêu đề dịch vụ */
-            color: #333; /* Màu chữ tối để dễ đọc */
-            font-weight: bold; /* Đậm chữ */
-        }
     </style>
 </head>
 <body>
@@ -75,7 +76,7 @@
         <div class="service-header">Chọn dịch vụ bạn muốn:</div>
         <div class="services">
             <button class="service-button" onclick="window.location.href='results.html'">Xem kết quả Cận lâm sàng</button>
-            <button class="service-button" onclick="window.location.href='image_services.html'">Dịch vụ hình ảnh cận lâm sàng</button>
+            <button class="service-button" onclick="window.location.href='imaging_services.html'">Dịch vụ hình ảnh cận lâm sàng</button>
         </div>
     </div>
     <script>
