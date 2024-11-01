@@ -1,0 +1,64 @@
+<!-- page4.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Người Bệnh</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        .container { max-width: 600px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="date"], input[type="time"] { width: 100%; padding: 8px; }
+        button { padding: 10px 15px; background-color: #28a745; color: white; border: none; cursor: pointer; width: 100%; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hồ Sơ Người Bệnh</h1>
+        <h2>Người bệnh: Vương Quốc Tuấn</h2>
+        <div class="form-group">
+            <label for="exam-date">Chọn ngày khám:</label>
+            <input type="date" id="exam-date" required>
+        </div>
+        <div class="form-group">
+            <label for="exam-time">Chọn thời gian khám:</label>
+            <input type="time" id="exam-time" required>
+        </div>
+        <button id="confirm-date">Xác nhận</button>
+    </div>
+
+    <div id="results-section" style="display:none; max-width: 600px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+        <h2>Kết quả Cận Lâm Sàng</h2>
+        <p><strong>Kết quả siêu âm:</strong> 27/09/2024</p>
+        <p><strong>Kết quả Xquang:</strong> 27/09/2024</p>
+        <p><strong>Kết quả Điện tim:</strong> 27/09/2024</p>
+        <p><strong>Kết quả Xét nghiệm:</strong> 27/09/2024</p>
+        <p>Loại xét nghiệm: Xét nghiệm ABC</p>
+        <p>Ngày thực hiện: 2024-06-24</p>
+        <p>Giá trị bình thường: 10 – 50</p>
+        <p>Kết quả xét nghiệm: 30</p>
+        <p>Ghi chú: Không có ghi chú</p>
+        <p><strong>Kết quả Đo mật độ xương:</strong> 27/09/2024</p>
+        <p><strong>Kết quả nội soi:</strong> 27/09/2024</p>
+        <button onclick="window.open('results.pdf')">Xem Bản Kết Quả PDF</button>
+    </div>
+
+    <script>
+        document.getElementById('confirm-date').onclick = function() {
+            const date = document.getElementById('exam-date').value;
+            const time = document.getElementById('exam-time').value;
+
+            if (date && time) {
+                alert('Ngày và thời gian đã được xác nhận: ' + date + ' ' + time);
+                document.getElementById('results-section').style.display = 'block';
+            } else {
+                alert('Vui lòng chọn ngày và thời gian.');
+            }
+        };
+    </script>
+</body>
+</html>
