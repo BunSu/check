@@ -1,110 +1,63 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e9ecef; /* Màu nền nhạt */
+    font-family: Arial, sans-serif; /* Sử dụng font dễ đọc */
+    background-color: #f4f4f4; /* Màu nền nhẹ nhàng */
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 800px; /* Giới hạn chiều rộng */
-    margin: 20px auto; /* Căn giữa */
-    padding: 20px;
-    background: #ffffff; /* Nền trắng */
-    border-radius: 10px; /* Bo tròn góc */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    max-width: 600px; /* Đặt chiều rộng tối đa cho container */
+    margin: 50px auto; /* Căn giữa container */
+    background-color: #fff; /* Màu nền trắng cho container */
+    padding: 20px; /* Thêm padding cho container */
+    border-radius: 10px; /* Bo tròn góc cho container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho container */
 }
 
 header {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid #007bff; /* Đường viền dưới */
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
 }
 
-h1 {
-    font-size: 28px; /* Kích thước tiêu đề chính */
-    color: #007bff; /* Màu xanh dương */
-}
-
-h2 {
-    font-size: 22px; /* Kích thước tiêu đề phụ */
-    color: #555; /* Màu chữ xám */
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    text-decoration: none; /* Bỏ gạch chân */
-    color: #007bff; /* Màu xanh dương */
-    font-weight: bold; /* Chữ đậm */
-}
-
-nav a:hover {
-    text-decoration: underline; /* Gạch chân khi hover */
-}
-
-main {
-    margin-top: 20px; /* Khoảng cách từ header */
+h1, h2 {
+    color: #2c3e50; /* Màu sắc cho tiêu đề */
 }
 
 form {
-    display: flex;
-    flex-direction: column; /* Đặt các thành phần theo cột */
+    display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử */
+    flex-direction: column; /* Đặt các phần tử theo chiều dọc */
 }
 
 label {
-    margin-bottom: 5px; /* Khoảng cách dưới mỗi label */
-    font-weight: bold; /* Chữ đậm cho label */
+    margin-top: 10px; /* Khoảng cách trên các nhãn */
+    font-size: 1.2em; /* Kích thước chữ lớn hơn */
+    color: #34495e; /* Màu sắc cho nhãn */
 }
 
-input {
-    padding: 12px; /* Padding cho trường nhập */
-    margin-bottom: 15px; /* Khoảng cách dưới mỗi trường nhập */
-    border: 2px solid #007bff; /* Đường viền màu xanh dương */
-    border-radius: 5px; /* Bo tròn góc */
-    font-size: 16px; /* Kích thước chữ */
-}
-
-input:focus {
-    outline: none; /* Bỏ viền khi focus */
-    border-color: #0056b3; /* Đổi màu viền khi focus */
+input[type="text"], input[type="tel"] {
+    padding: 10px; /* Thêm padding cho input */
+    font-size: 1em; /* Kích thước chữ trong input */
+    border: 1px solid #ccc; /* Đường viền nhẹ cho input */
+    border-radius: 5px; /* Bo tròn góc cho input */
+    margin-top: 5px; /* Khoảng cách giữa nhãn và input */
 }
 
 button {
-    background: #007bff; /* Màu nền cho nút */
-    color: white; /* Màu chữ trắng */
-    border: none; /* Bỏ viền */
-    padding: 12px; /* Padding cho nút */
-    border-radius: 5px; /* Bo tròn góc */
-    cursor: pointer; /* Con trỏ chuột khi hover */
-    font-size: 16px; /* Kích thước chữ */
-    transition: background 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+    padding: 10px; /* Thêm padding cho nút */
+    font-size: 1.2em; /* Kích thước chữ lớn hơn */
+    margin-top: 15px; /* Khoảng cách trên nút */
+    background-color: #3498db; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Xóa đường viền */
+    border-radius: 5px; /* Bo tròn góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover qua nút */
 }
 
 button:hover {
-    background: #0056b3; /* Màu nền khi hover */
+    background-color: #2980b9; /* Màu nền khi hover qua nút */
 }
 
-.help {
-    margin-top: 20px; /* Khoảng cách từ form */
-    padding: 15px; /* Padding cho khung giúp đỡ */
-    border: 2px solid #007bff; /* Đường viền màu xanh dương */
-    border-radius: 5px; /* Bo tròn góc */
-    background-color: #e9f7ff; /* Nền xanh nhạt */
-}
-
-.help h3 {
-    margin: 0; /* Bỏ margin */
-    font-size: 18px; /* Kích thước tiêu đề trong hộp giúp đỡ */
-}
-
-.chat-box {
-    background: #007bff; /* Màu nền cho box chat */
-    color: white; /* Màu chữ trắng */
-    padding: 10px; /* Padding cho box chat */
-    border-radius: 5px; /* Bo tròn góc */
-    text-align: center; /* Căn giữa chữ */
-    margin-top: 10px; /* Khoảng cách trên box chat */
-    font-weight: bold; /* Chữ đậm */
+#otp-message {
+    margin-top: 10px; /* Khoảng cách trên thông báo OTP */
+    font-size: 1em; /* Kích thước chữ thông báo */
 }
