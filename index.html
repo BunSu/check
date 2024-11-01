@@ -3,50 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRA CỨU KẾT QUẢ CẬN LÂM SÀNG TRỰC TUYẾN</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Trang Chủ - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header với tiêu đề và menu điều hướng -->
     <header>
-        <h1>TRA CỨU KẾT QUẢ CẬN LÂM SÀNG TRỰC TUYẾN</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Link Bệnh viện</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Tra cứu</a></li>
-                <li><a href="#">Hướng dẫn</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN</h2>
+            <nav>
+                <a href="https://facebook.com/yourfanpage" target="_blank">Fanpage</a>
+                <a href="https://facebook.com/yourfacebook" target="_blank">Facebook</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Form thông tin người bệnh -->
-    <section class="search-section">
-        <h2>Tra cứu thông tin người bệnh</h2>
-        <form action="verify.html" method="post">
-            <label for="fullname">Họ và tên:</label>
-            <input type="text" id="fullname" name="fullname" required>
+    <main>
+        <section class="intro">
+            <h3>Chào Mừng Đến Với Hệ Thống Tra Cứu Kết Quả Cận Lâm Sàng</h3>
+            <p>Tin tức và các dịch vụ nổi bật của bệnh viện.</p>
+        </section>
 
-            <label for="idcode">Số CCCD hoặc mã BYHT:</label>
-            <input type="text" id="idcode" name="idcode" required>
+        <section class="patient-info">
+            <h3>Thông Tin Bệnh Nhân</h3>
+            <form id="patientForm">
+                <label for="fullName">Họ và Tên:</label>
+                <input type="text" id="fullName" required>
+                
+                <label for="idNumber">Số CCCD / Mã BYHT:</label>
+                <input type="text" id="idNumber" required>
 
-            <label for="phone">Số điện thoại đã đăng ký:</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="phoneNumber">Số Điện Thoại:</label>
+                <input type="text" id="phoneNumber" required>
 
-            <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
+                <button type="button" id="sendOtp">Gửi Mã OTP</button>
 
-            <label for="otp">Nhập mã OTP:</label>
-            <input type="text" id="otp" name="otp" required>
+                <label for="otp">Nhập Mã OTP:</label>
+                <input type="text" id="otp">
+                <button type="button" id="confirmOtp">Xác Nhận</button>
+            </form>
+        </section>
 
-            <button type="submit">Xác nhận</button>
-        </form>
-    </section>
+        <section class="contact-support">
+            <h3>Thông Tin Liên Hệ và Hỗ Trợ</h3>
+            <p>Địa chỉ: Bệnh viện Y học cổ truyền Cao Bằng</p>
+            <p>Hotline: 0333467598</p>
+            <p>Email: support@example.com</p>
+            <p>Hướng dẫn sử dụng website: Vui lòng tham khảo phần hướng dẫn trên trang.</p>
+        </section>
+        
+        <section class="chatbox">
+            <h3>Hỗ Trợ Trực Tuyến</h3>
+            <!-- Bạn có thể tích hợp một dịch vụ chat tại đây -->
+            <div id="chat">Box chat sẽ hiển thị ở đây.</div>
+        </section>
+    </main>
 
-    <script>
-        function sendOTP() {
-            alert("Mã OTP đã được gửi đến số điện thoại đăng ký.");
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 Bệnh Viện Đa Khoa Y Dược Cổ Truyền Cao Bằng</p>
+    </footer>
 </body>
 </html>
