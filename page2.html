@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang 2</title>
+    <title>Hồ Sơ Bệnh Án</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Chào mừng đến với Trang 2</h1>
-    <p>Đây là trang tiếp theo sau khi xác thực thành công.</p>
+    <!-- Header với logo và tiêu đề -->
+    <header class="header">
+        <div class="logo">Logo</div>
+        <h1>HỒ SƠ BỆNH ÁN</h1>
+    </header>
+
+    <!-- Thông tin bệnh nhân -->
+    <section class="patient-info">
+        <h2>Thông Tin Bệnh Nhân</h2>
+        <p><strong>Họ và Tên:</strong> Vương Quốc Tuấn</p>
+        <p><strong>Mã Bệnh Án:</strong> 123456</p>
+    </section>
+
+    <!-- Nút Xem kết quả Cận lâm sàng -->
+    <div class="button-container">
+        <button onclick="viewResults()">Xem Kết Quả Cận Lâm Sàng</button>
+    </div>
+
+    <script>
+        // Hàm khi nhấn nút "Xem Kết Quả Cận Lâm Sàng"
+        function viewResults() {
+            window.location.href = "results.html"; // Chuyển hướng đến trang kết quả
+        }
+    </script>
 </body>
 </html>
