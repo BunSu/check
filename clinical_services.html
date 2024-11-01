@@ -3,31 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Dịch Vụ Cận Lâm Sàng</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Danh sách dịch vụ Cận lâm sàng</title>
+    <style>
+        /* CSS cho giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f9; /* Màu nền pastel nhẹ */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px; /* Tăng padding để box lớn hơn */
+            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Căn giữa toàn bộ văn bản */
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px; /* Tăng kích thước tiêu đề chính */
+            color: #007bff; /* Màu xanh cho tiêu đề */
+        }
+
+        .services {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa các nút */
+            margin-top: 30px;
+        }
+
+        .service-button {
+            padding: 15px 30px; /* Tăng kích thước padding */
+            font-size: 18px; /* Tăng kích thước chữ */
+            background-color: #007bff; /* Màu nền xanh */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0; /* Khoảng cách giữa các nút */
+            transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+            width: 100%; /* Để nút rộng toàn bộ chiều rộng */
+            max-width: 300px; /* Đặt chiều rộng tối đa cho nút */
+        }
+
+        .service-button:hover {
+            background-color: #0056b3; /* Màu nền khi hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>SỞ Y TẾ CAO BẰNG</h1>
-            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+            <h1>Danh sách dịch vụ Cận lâm sàng</h1>
         </header>
-
-        <main>
-            <h3>Danh Sách Dịch Vụ Cận Lâm Sàng</h3>
-            <button id="view-results-button">Xem kết quả Cận lâm sàng</button>
-            <button id="imaging-services-button">Dịch vụ hình ảnh cận lâm sàng</button>
-        </main>
+        <div class="services">
+            <button class="service-button" onclick="window.location.href='results.html'">Xem kết quả Cận lâm sàng</button>
+            <button class="service-button" onclick="window.location.href='image_services.html'">Dịch vụ hình ảnh cận lâm sàng</button>
+        </div>
     </div>
-
     <script>
-        document.getElementById("view-results-button").onclick = function() {
-            window.location.href = "results.html"; // Chuyển đến trang kết quả
-        };
-
-        document.getElementById("imaging-services-button").onclick = function() {
-            window.location.href = "imaging_services.html"; // Chuyển đến trang dịch vụ hình ảnh cận lâm sàng
-        };
+        // Thêm JavaScript nếu cần
     </script>
 </body>
 </html>
