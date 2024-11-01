@@ -1,0 +1,19 @@
+.results-list {
+    margin-top: 20px;
+}
+
+.results-list p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.pdf-link {
+    text-decoration: none;
+    color: #2196F3;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.pdf-link:hover {
+    color: #1976D2;
+}
