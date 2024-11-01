@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ Sơ Bệnh Án</title>
+    <title>Hồ Sơ Người Bệnh</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>SỞ Y TẾ CAO BẰNG</h1>
             <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
-        <h3>Hồ Sơ Bệnh Án</h3>
-        <p>Người bệnh: Vương Quốc Tuấn, 1998</p>
+        <main>
+            <h3>Hồ Sơ Người Bệnh</h3>
+            <p>Người bệnh: Vương Quốc Tuấn (1998)</p>
 
-        <div class="date-selection">
             <label for="appointment-date">Chọn ngày khám, điều trị:</label>
             <input type="date" id="appointment-date" required>
-            <label for="appointment-time">Chọn thời gian:</label>
-            <input type="time" id="appointment-time" required>
-            <button id="submit-appointment">Xác nhận</button>
-        </div>
-    </main>
 
-    <footer>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-    </footer>
+            <button id="confirm-appointment">Xác nhận</button>
+        </main>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById("confirm-appointment").onclick = function() {
+            var selectedDate = document.getElementById("appointment-date").value;
+            if (selectedDate) {
+                alert("Ngày khám được chọn: " + selectedDate);
+                window.location.href = "clinical_services.html"; // Chuyển đến trang danh sách dịch vụ
+            } else {
+                alert("Vui lòng chọn ngày khám.");
+            }
+        };
+    </script>
 </body>
 </html>
