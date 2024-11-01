@@ -3,37 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ Sơ Người Bệnh</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Hồ Sơ Bệnh Án</title>
+    <style>
+        /* CSS cho giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf4f7; /* Màu nền xanh nhạt */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center; /* Căn giữa tiêu đề */
+            margin: 20px 0; /* Khoảng cách cho tiêu đề */
+        }
+
+        .header h1 {
+            font-size: 24px; /* Kích thước tiêu đề chính */
+            color: #0056b3; /* Màu xanh đậm cho tiêu đề */
+            margin: 0; /* Bỏ margin để gần nhau */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px; /* Tăng padding để box lớn hơn */
+            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Căn giữa toàn bộ văn bản */
+        }
+
+        .patient-record-header {
+            margin: 20px 0;
+            font-size: 28px; /* Kích thước chữ cho tiêu đề hồ sơ bệnh án lớn hơn */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            font-weight: bold; /* Đậm chữ */
+        }
+
+        .input-field {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%; /* Độ rộng của các trường nhập */
+            border-radius: 5px;
+            border: 1px solid #0056b3; /* Đường viền xanh */
+        }
+
+        .submit-button {
+            background-color: #0056b3; /* Nền xanh đậm */
+            color: white; /* Chữ trắng */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Kích thước chữ cho nút */
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #003d80; /* Màu nền khi hover */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>SỞ Y TẾ CAO BẰNG</h1>
-            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
-        </header>
-
-        <main>
-            <h3>Hồ Sơ Người Bệnh</h3>
-            <p>Người bệnh: Vương Quốc Tuấn (1998)</p>
-
-            <label for="appointment-date">Chọn ngày khám, điều trị:</label>
-            <input type="date" id="appointment-date" required>
-
-            <button id="confirm-appointment">Xác nhận</button>
-        </main>
+    <div class="header">
+        <h1>SỞ Y TẾ CAO BẰNG</h1>
+        <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
     </div>
-
-    <script>
-        document.getElementById("confirm-appointment").onclick = function() {
-            var selectedDate = document.getElementById("appointment-date").value;
-            if (selectedDate) {
-                alert("Ngày khám được chọn: " + selectedDate);
-                window.location.href = "clinical_services.html"; // Chuyển đến trang danh sách dịch vụ
-            } else {
-                alert("Vui lòng chọn ngày khám.");
-            }
-        };
-    </script>
+    <div class="container">
+        <div class="patient-record-header">HỒ SƠ BỆNH ÁN</div>
+        <form>
+            <input type="text" class="input-field" placeholder="Họ và tên người bệnh" required>
+            <input type="text" class="input-field" placeholder="Mã bệnh án" required>
+            <button type="submit" class="submit-button">Xem kết quả Cận lâm sàng</button>
+        </form>
+    </div>
 </body>
 </html>
