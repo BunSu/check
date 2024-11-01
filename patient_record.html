@@ -50,6 +50,14 @@
             border: 1px solid #0056b3; /* Đường viền xanh */
         }
 
+        .date-picker {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%; /* Độ rộng của lịch */
+            border-radius: 5px;
+            border: 1px solid #0056b3; /* Đường viền xanh */
+        }
+
         .submit-button {
             background-color: #0056b3; /* Nền xanh đậm */
             color: white; /* Chữ trắng */
@@ -74,8 +82,10 @@
     <div class="container">
         <div class="patient-record-header">HỒ SƠ BỆNH ÁN</div>
         <form>
-            <input type="text" class="input-field" placeholder="Họ và tên người bệnh" required>
-            <input type="text" class="input-field" placeholder="Mã bệnh án" required>
+            <input type="text" class="input-field" placeholder="Họ và tên người bệnh: Vương Quốc Tuân" required>
+            <input type="text" class="input-field" placeholder="Mã bệnh án: 123456" required>
+            <input type="text" class="input-field" placeholder="Năm sinh: 1998" readonly>
+            <input type="date" class="date-picker" required>
             <button type="submit" class="submit-button">Xem kết quả Cận lâm sàng</button>
         </form>
     </div>
