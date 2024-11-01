@@ -3,53 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Tra Cứu Kết Quả Cận Lâm Sàng</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function sendOTP() {
-            document.getElementById('notification').innerText = "Mã OTP đã được gửi!";
-            document.getElementById('notification').className = "notification success";
-            document.getElementById('notification').style.display = "block";
-        }
-
-        function confirmOTP() {
-            document.getElementById('notification').innerText = "Mã OTP đã được xác nhận!";
-            document.getElementById('notification').className = "notification success";
-            document.getElementById('notification').style.display = "block";
-            setTimeout(goToPatientRecord, 2000); // Chuyển đến trang hồ sơ sau 2 giây
-        }
-
-        function goToPatientRecord() {
-            window.location.href = "patient_record.html"; // Chuyển đến trang hồ sơ
-        }
-    </script>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG</h2>
+        <div class="container">
+            <h1>SỞ Y TẾ CAO BẰNG</h1>
+            <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+        </div>
     </header>
-    <section class="lookup-form">
-        <h2>Thông Tin Người Bệnh</h2>
-        <div class="notification" id="notification" style="display: none;"></div>
-        <form id="lookupForm" onsubmit="return false;">
-            <label for="patientName">Họ và tên người bệnh:</label>
-            <input type="text" id="patientName" placeholder="Nhập họ tên" required>
 
-            <label for="patientID">Số CCCD hoặc mã BYHT:</label>
-            <input type="text" id="patientID" placeholder="Nhập số CCCD hoặc mã BYHT" required>
+    <main class="container">
+        <h3>Đăng Nhập Thông Tin</h3>
+        <form id="login-form">
+            <label for="full-name">Họ và tên:</label>
+            <input type="text" id="full-name" required>
 
-            <label for="phoneNumber">Số điện thoại đã đăng ký:</label>
-            <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại" required>
+            <label for="id-number">CCCD/Mã số BHYT:</label>
+            <input type="text" id="id-number" required>
 
-            <button type="button" onclick="sendOTP()">Gửi mã OTP</button>
+            <label for="phone-number">Số điện thoại đã đăng ký:</label>
+            <input type="text" id="phone-number" required>
 
-            <div class="otp-section">
-                <label for="otp">Nhập mã OTP:</label>
-                <input type="text" id="otp" placeholder="Nhập mã OTP" required>
-                <button type="button" onclick="confirmOTP()">Xác nhận</button>
-            </div>
+            <button type="submit">Gửi</button>
+            <label for="otp">Nhập mã OTP:</label>
+            <input type="text" id="otp" required>
+            <button type="button" id="confirm-otp">Xác nhận</button>
         </form>
-    </section>
+
+        <div class="support">
+            <p>Hướng dẫn sử dụng</p>
+            <p>Hotline: 0333467598</p>
+            <div class="chatbox">Box chat</div>
+        </div>
+    </main>
+
+    <footer>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
