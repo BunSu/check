@@ -1,4 +1,4 @@
 document.getElementById('view-results-button').addEventListener('click', function() {
-    alert('Hiển thị kết quả Cận lâm sàng cho bệnh nhân Vương Quốc Tuấn.');
-    // Bạn có thể chuyển hướng tới trang kết quả cụ thể ở đây nếu cần
+    // Thay đổi để chuyển hướng đến trang danh sách dịch vụ
+    window.location.href = 'clinical_services.html'; // Chuyển hướng đến trang danh sách dịch vụ
 });
