@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Dịch Vụ Cận Lâm Sàng</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function viewClinicalResults() {
+            window.location.href = "patient_results.html"; // Chuyển đến trang kết quả
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>SỞ Y TẾ CAO BẰNG</h1>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN PHỤC HỒI CHỨC NĂNG</h2>
+    </header>
+    <section class="clinical-services">
+        <h2>Danh Sách Dịch Vụ Cận Lâm Sàng</h2>
+        <ul>
+            <li><button onclick="alert('Xem hình ảnh X-quang')">Xem hình ảnh X-quang</button></li>
+            <li><button onclick="alert('Xem hình ảnh CLVT')">Xem hình ảnh CLVT</button></li>
+            <li><button onclick="alert('Xem hình ảnh MRI')">Xem hình ảnh MRI</button></li>
+            <li><button onclick="alert('Xem hình ảnh Siêu âm')">Xem hình ảnh Siêu âm</button></li>
+            <li><button onclick="alert('Xem video Nội soi')">Xem video Nội soi</button></li>
+            <li><button onclick="viewClinicalResults()">Xem kết quả Cận lâm sàng</button></li>
+        </ul>
+    </section>
+</body>
+</html>
