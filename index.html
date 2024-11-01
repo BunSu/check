@@ -5,77 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website tra cứu kết quả cận lâm sàng</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { max-width: 600px; margin: auto; padding: 20px; }
-        h1, h2 { color: #4CAF50; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
         input[type="text"], input[type="password"], input[type="date"] {
-            width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
         }
         button {
-            background-color: #4CAF50; color: white; padding: 10px 20px;
-            border: none; border-radius: 5px; cursor: pointer;
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        button:hover { background-color: #45a049; }
+        button:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-    <!-- Trang 1: Tra cứu kết quả -->
+    <!-- Trang 1: Nhập thông tin tra cứu -->
     <div class="container">
-        <h1>Website tra cứu kết quả cận lâm sàng</h1>
-        <img src="logo.png" alt="Logo" width="100">
-        <h2>Thông tin bệnh nhân</h2>
+        <h1>Website Tra Cứu Kết Quả Cận Lâm Sàng</h1>
+        <h2>Nhập Thông Tin Bệnh Nhân</h2>
         <form action="trang2.html" method="POST">
-            <label>Họ và tên người bệnh</label>
-            <input type="text" name="name" required>
-            <label>Số CCCD hoặc mã BYHT</label>
-            <input type="text" name="id" required>
-            <label>Số điện thoại đã đăng ký</label>
-            <input type="text" name="phone" required>
+            <label for="name">Họ và tên người bệnh:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="id">Số CCCD hoặc mã BYHT:</label>
+            <input type="text" id="id" name="id" required>
+            
+            <label for="phone">Số điện thoại đã đăng ký:</label>
+            <input type="text" id="phone" name="phone" required>
+            
             <button type="button">Gửi mã OTP</button>
-            <label>Nhập mã OTP</label>
-            <input type="password" name="otp" required>
+            
+            <label for="otp">Nhập mã OTP:</label>
+            <input type="password" id="otp" name="otp" required>
+            
             <button type="submit">Xác nhận</button>
         </form>
     </div>
 
     <!-- Trang 2: Hồ sơ bệnh án -->
-    <div class="container">
-        <h1>HỒ SƠ BỆNH ÁN</h1>
-        <img src="logo.png" alt="Logo" width="100">
+    <div class="container" style="display: none;">
+        <h1>Hồ Sơ Bệnh Án</h1>
         <p>Họ và tên người bệnh: Vương Quốc Tuấn</p>
         <p>Mã bệnh án: 123456</p>
         <button onclick="window.location.href='trang3.html'">Xem kết quả Cận lâm sàng</button>
+        <a href="#" class="back-button">Quay lại</a>
     </div>
 
     <!-- Trang 3: Danh sách dịch vụ Cận lâm sàng -->
-    <div class="container">
-        <h1>Danh sách dịch vụ Cận lâm sàng</h1>
-        <h2>Chọn loại dịch vụ</h2>
-        <button onclick="window.location.href='trang4.html'">Xem hình ảnh (X-quang, CLVT, MRI, siêu âm, nội soi...)</button>
-        <button onclick="window.location.href='trang4.html'">Xem kết quả Cận lâm sàng (Xét nghiệm, chẩn đoán hình ảnh...)</button>
+    <div class="container" style="display: none;">
+        <h1>Danh Sách Dịch Vụ Cận Lâm Sàng</h1>
+        <button onclick="window.location.href='trang4.html'">Xem Hình Ảnh</button>
+        <button onclick="window.location.href='trang4.html'">Xem Kết Quả Cận Lâm Sàng</button>
+        <a href="#" class="back-button">Quay lại</a>
     </div>
 
     <!-- Trang 4: Hồ sơ người bệnh -->
-    <div class="container">
-        <h1>Hồ sơ người bệnh</h1>
+    <div class="container" style="display: none;">
+        <h1>Hồ Sơ Người Bệnh</h1>
         <p>Người bệnh: Vương Quốc Tuấn</p>
-        <label>Chọn ngày khám, điều trị</label>
+        <label>Chọn ngày khám, điều trị:</label>
         <input type="date" name="date" required>
         <button onclick="window.location.href='trang5.html'">Xác nhận</button>
+        <a href="#" class="back-button">Quay lại</a>
     </div>
 
     <!-- Trang 5: Kết quả cận lâm sàng -->
-    <div class="container">
-        <h1>Kết quả cận lâm sàng</h1>
-        <h2>Ngày: 27/09/2024</h2>
-        <ul>
-            <li>Kết quả Siêu âm - <a href="ketqua_sieuam.pdf" target="_blank">Xem PDF</a></li>
-            <li>Kết quả X-quang - <a href="ketqua_xquang.pdf" target="_blank">Xem PDF</a></li>
-            <li>Kết quả Điện tim - <a href="ketqua_dientim.pdf" target="_blank">Xem PDF</a></li>
-            <li>Kết quả Xét nghiệm - <a href="ketqua_xetnghiem.pdf" target="_blank">Xem PDF</a></li>
-            <li>Kết quả Đo mật độ xương - <a href="ketqua_xuong.pdf" target="_blank">Xem PDF</a></li>
-            <li>Kết quả Nội soi - <a href="ketqua_noisoi.pdf" target="_blank">Xem PDF</a></li>
+    <div class="container" style="display: none;">
+        <h1>Kết Quả Cận Lâm Sàng</h1>
+        <ul style="text-align: left;">
+            <li>Kết quả Siêu âm (27/09/2024) - <a href="ketqua_sieuam.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả X-quang (27/09/2024) - <a href="ketqua_xquang.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Điện tim (27/09/2024) - <a href="ketqua_dientim.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Xét nghiệm (27/09/2024) - <a href="ketqua_xetnghiem.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Đo mật độ xương (27/09/2024) - <a href="ketqua_xuong.pdf" target="_blank">Xem PDF</a></li>
+            <li>Kết quả Nội soi (27/09/2024) - <a href="ketqua_noisoi.pdf" target="_blank">Xem PDF</a></li>
         </ul>
+        <a href="#" class="back-button">Quay lại</a>
     </div>
 </body>
 </html>
