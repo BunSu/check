@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sở Y Tế Cao Bằng - Bệnh Viện Đa Khoa Y Dược Cổ Truyền</title>
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Kết nối CSS -->
+    <style>
+        /* CSS cho hộp chat mini */
+        #chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: none; /* Ẩn hộp chat theo mặc định */
+        }
+
+        #chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -22,7 +52,7 @@
             <label for="phone">Số điện thoại đã đăng ký:</label>
             <input type="tel" id="phone" required>
 
-            <button type="submit">Gửi</button>
+            <button type="button" id="send-otp">Gửi mã OTP</button>
 
             <label for="otp">Nhập mã OTP:</label>
             <input type="text" id="otp" required>
@@ -31,17 +61,44 @@
             <p id="otp-message"></p> <!-- Thông báo mã OTP -->
         </form>
         <div id="chatbox">
-            <p>Hướng dẫn sử dụng</p>
-            <p>Hotline: 0333467598</p>
+            <h3>Hướng dẫn sử dụng</h3>
+            <p>Để sử dụng dịch vụ tra cứu kết quả bệnh án, vui lòng làm theo các bước sau:</p>
+            <ol>
+                <li>Nhập họ và tên, CCCD/Mã số BHYT và số điện thoại đã đăng ký.</li>
+                <li>Nhấn nút "Gửi mã OTP" để nhận mã xác nhận qua SMS.</li>
+                <li>Nhập mã OTP vào ô tương ứng và nhấn nút "Xác nhận".</li>
+            </ol>
+            <p><strong>Hotline: 0333467598</strong></p>
         </div>
+        <button id="chat-toggle">💬</button> <!-- Nút để mở/đóng hộp chat -->
     </div>
 
     <script>
+        document.getElementById("send-otp").onclick = function() {
+            var phoneNumber = document.getElementById("phone").value;
+            if (phoneNumber) {
+                // Thực hiện gửi mã OTP đến số điện thoại (giả định gửi thành công)
+                alert("Mã OTP đã được gửi đến số điện thoại: " + phoneNumber);
+            } else {
+                alert("Vui lòng nhập số điện thoại trước khi gửi mã OTP.");
+            }
+        };
+
         document.getElementById("otp-form").onsubmit = function(event) {
             event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
             // Chuyển đến trang hồ sơ bệnh án mà không cần kiểm tra mã OTP
             window.location.href = "patient_record.html"; 
+        };
+
+        // Hàm để mở/đóng hộp chat
+        document.getElementById("chat-toggle").onclick = function() {
+            var chatbox = document.getElementById("chatbox");
+            if (chatbox.style.display === "none" || chatbox.style.display === "") {
+                chatbox.style.display = "block"; // Hiển thị hộp chat
+            } else {
+                chatbox.style.display = "none"; // Ẩn hộp chat
+            }
         };
     </script>
 </body>
