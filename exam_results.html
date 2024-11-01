@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Cận Lâm Sàng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hồ Sơ Người Bệnh</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Link Bệnh viện</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Tra cứu</a></li>
+                <li><a href="#">Hướng dẫn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="results">
+        <h2>Kết quả Cận lâm sàng cho Vương Quốc Tuấn</h2>
+        <label for="date">Chọn ngày khám, điều trị:</label>
+        <input type="date" id="date" name="date">
+        <button onclick="confirmDate()">Xác nhận</button>
+
+        <div class="results-list" id="results-list">
+            <!-- Kết quả sẽ hiển thị ở đây -->
+        </div>
+    </section>
+
+    <script>
+        function confirmDate() {
+            const selectedDate = document.getElementById('date').value;
+            const resultsDiv = document.getElementById('results-list');
+            resultsDiv.innerHTML = `
+                <h3>Kết quả cận lâm sàng (Ngày: ${selectedDate})</h3>
+                <ul>
+                    <li>Kết quả Siêu âm: <strong>27/09/2024</strong></li>
+                    <li>Kết quả X-quang: <strong>27/09/2024</strong></li>
+                    <li>Kết quả Điện tim: <strong>27/09/2024</strong></li>
+                    <li>Kết quả Xét nghiệm: <strong>27/09/2024</strong>
+                        <ul>
+                            <li>Loại xét nghiệm: Xét nghiệm ABC</li>
+                            <li>Ngày thực hiện: 2024-06-24</li>
+                            <li>Giá trị bình thường: 10 – 50</li>
+                            <li>Kết quả xét nghiệm: 30</li>
+                            <li>Ghi chú: Không có ghi chú.</li>
+                        </ul>
+                    </li>
+                    <li>Kết quả Đo mật độ xương: <strong>27/09/2024</strong></li>
+                    <li>Kết quả Nội soi: <strong>27/09/2024</strong></li>
+                </ul>
+                <button onclick="window.open('path_to_pdf.pdf', '_blank')">Xem Kết quả (PDF)</button>
+            `;
+        }
+    </script>
+</body>
+</html>
