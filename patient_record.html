@@ -21,21 +21,24 @@
             padding: 20px;
             margin: 20px auto;
             max-width: 400px;
-            text-align: left;
+            text-align: center;
         }
         .patient-record label {
-            display: block;
+            display: inline-block;
             margin-top: 10px;
         }
-        .patient-record input[type="date"] {
-            width: calc(100% - 20px);
+        .date-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .date-inputs input[type="date"] {
             padding: 8px;
-            margin: 5px 0;
         }
         .view-results-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
+            display: inline-block;
+            padding: 10px 20px;
             margin-top: 20px;
             background-color: #007bff;
             color: white;
@@ -56,20 +59,21 @@
 
     <section class="patient-record">
         <h3>HỒ SƠ BỆNH ÁN</h3>
-        <p><strong>Họ và tên người bệnh:</strong> Vương Quốc Tuân</p>
+        <p><strong>Họ và tên người bệnh:</strong> Vương Quốc Tuấn</p>
         <p><strong>Năm sinh:</strong> 1998</p>
 
-        <label for="start-date">Tạo tra cứu hồ sơ từ ngày:</label>
-        <input type="date" id="start-date" name="start-date" required>
+        <label>Tạo tra cứu hồ sơ từ ngày:</label>
+        <div class="date-inputs">
+            <input type="date" id="start-date" name="start-date" required>
+            <span>đến ngày</span>
+            <input type="date" id="end-date" name="end-date" required>
+        </div>
 
-        <label for="end-date">đến ngày:</label>
-        <input type="date" id="end-date" name="end-date" required>
-
-        <button class="view-results-button" onclick="viewClinicalResults()">Xem kết quả Cận lâm sàng</button>
+        <button class="view-results-button" onclick="viewMedicalRecord()">Xem kết quả Cận lâm sàng</button>
     </section>
 
     <script>
-        function viewClinicalResults() {
+        function viewMedicalRecord() {
             // Lấy giá trị ngày bắt đầu và kết thúc
             const startDate = document.getElementById('start-date').value;
             const endDate = document.getElementById('end-date').value;
@@ -80,8 +84,8 @@
                 return;
             }
 
-            // Điều hướng đến trang kết quả (thay 'clinical_results.html' bằng URL đúng của bạn)
-            window.location.href = `clinical_results.html?startDate=${startDate}&endDate=${endDate}`;
+            // Điều hướng đến trang medical_record.html
+            window.location.href = `medical_record.html?startDate=${startDate}&endDate=${endDate}`;
         }
     </script>
 </body>
