@@ -3,87 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Hồ Sơ Bệnh Án</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #eaf4f7; /* Màu nền xanh nhạt */
-            color: #333; /* Màu chữ tối để dễ đọc */
-            margin: 0;
-            padding: 0;
         }
-
-        .header {
+        header, section {
             text-align: center;
-            margin: 20px 0;
+            margin: 20px;
         }
-
-        .header h1 {
-            font-size: 24px;
-            color: #0056b3; /* Màu xanh đậm cho tiêu đề */
-            margin: 0;
+        .hospital-info h1, .hospital-info h2 {
+            margin: 5px 0;
         }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #ffffff; /* Nền trắng cho khung nội dung */
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .patient-record {
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            text-align: left;
         }
-
-        .patient-record-header {
-            margin: 20px 0;
-            font-size: 28px; /* Kích thước chữ cho tiêu đề hồ sơ bệnh án lớn hơn */
-            color: #333; /* Màu chữ tối để dễ đọc */
-            font-weight: bold; /* Đậm chữ */
-        }
-
-        .info {
-            margin: 10px 0;
-            font-size: 20px; /* Kích thước chữ cho thông tin bệnh nhân */
-            color: #333; /* Màu chữ tối để dễ đọc */
-        }
-
-        .date-picker {
-            margin: 10px 0;
-            padding: 10px;
-            width: 80%; /* Độ rộng của lịch */
-            border-radius: 5px;
-            border: 1px solid #0056b3; /* Đường viền xanh */
-            font-size: 16px; /* Kích thước chữ cho lịch */
-        }
-
-        .submit-button {
-            background-color: #0056b3; /* Nền xanh đậm */
-            color: white; /* Chữ trắng */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px; /* Kích thước chữ cho nút */
+        .patient-record label {
+            display: block;
             margin-top: 10px;
         }
-
-        .submit-button:hover {
-            background-color: #003d80; /* Màu nền khi hover */
+        .patient-record input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 5px 0;
+        }
+        .view-results-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .view-results-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="hospital-info">
         <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
-    </div>
-    <div class="container">
-        <div class="patient-record-header">HỒ SƠ BỆNH ÁN</div>
-        <div class="info">Họ và tên người bệnh: Vương Quốc Tuân</div>
-        <div class="info">Năm sinh: 1998</div>
-        <input type="date" class="date-picker" required>
-        <button type="button" class="submit-button" onclick="window.location.href='clinical_services.html'">Xem kết quả Cận lâm sàng</button>
-    </div>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+    </header>
+
+    <section class="patient-record">
+        <h3>HỒ SƠ BỆNH ÁN</h3>
+        <p><strong>Họ và tên người bệnh:</strong> Vương Quốc Tuân</p>
+        <p><strong>Năm sinh:</strong> 1998</p>
+
+        <label for="start-date">Tạo tra cứu hồ sơ từ ngày:</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="end-date">đến ngày:</label>
+        <input type="date" id="end-date" name="end-date" required>
+
+        <button class="view-results-button" onclick="viewClinicalResults()">Xem kết quả Cận lâm sàng</button>
+    </section>
+
+    <script>
+        function viewClinicalResults() {
+            // Lấy giá trị ngày bắt đầu và kết thúc
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            
+            // Kiểm tra người dùng đã chọn ngày chưa
+            if (!startDate || !endDate) {
+                alert("Vui lòng chọn cả ngày bắt đầu và ngày kết thúc.");
+                return;
+            }
+
+            // Điều hướng đến trang kết quả (thay 'clinical_results.html' bằng URL đúng của bạn)
+            window.location.href = `clinical_results.html?startDate=${startDate}&endDate=${endDate}`;
+        }
+    </script>
 </body>
 </html>
