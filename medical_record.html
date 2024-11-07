@@ -35,16 +35,16 @@
         }
         .record-section h3 {
             color: #333;
-            margin: 0 0 15px;
+            margin: 15px 0;
         }
         .service-list {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 10px 0;
         }
         .service-list li {
             padding: 10px;
-            margin: 10px 0;
+            margin: 8px 0;
             background-color: #007bff;
             color: white;
             border-radius: 5px;
@@ -53,6 +53,10 @@
         }
         .service-list li:hover {
             background-color: #0056b3;
+        }
+        .service-category {
+            text-align: left;
+            margin: 15px 0;
         }
     </style>
 </head>
@@ -69,22 +73,40 @@
             <p>Mã bệnh án: 123456</p>
         </div>
         <section class="record-section">
-            <h3>Danh sách dịch vụ Cận lâm sàng</h3>
-            <ul class="service-list">
-                <li onclick="viewResult('xray')">Xem hình ảnh X-quang</li>
-                <li onclick="viewResult('ct_mri')">Xem hình ảnh CLVT / MRI</li>
-                <li onclick="viewResult('ultrasound')">Xem hình ảnh siêu âm</li>
-                <li onclick="viewResult('endoscopy')">Xem video nội soi dạ dày / trực tràng</li>
-                <li onclick="viewResult('lab')">Xem kết quả xét nghiệm</li>
-                <li onclick="viewResult('functional')">Xem kết quả thăm dò chức năng</li>
-            </ul>
+            <h3>Dịch vụ cận lâm sàng đã thực hiện</h3>
+
+            <div class="service-category">
+                <h4>Xét nghiệm</h4>
+                <ul class="service-list">
+                    <li onclick="viewServiceDetail('sinhhoa')">Sinh hóa</li>
+                    <li onclick="viewServiceDetail('huyethoc')">Huyết học</li>
+                    <li onclick="viewServiceDetail('nuoctieu')">Nước tiểu</li>
+                    <li onclick="viewServiceDetail('visinh')">Vi sinh</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h4>Chẩn đoán hình ảnh</h4>
+                <ul class="service-list">
+                    <li onclick="viewServiceDetail('xray')">X-quang</li>
+                    <li onclick="viewServiceDetail('ultrasound')">Siêu âm</li>
+                </ul>
+            </div>
+
+            <div class="service-category">
+                <h4>Thăm dò chức năng</h4>
+                <ul class="service-list">
+                    <li onclick="viewServiceDetail('dientim')">Điện tim</li>
+                    <li onclick="viewServiceDetail('doxuong')">Đo mật độ xương</li>
+                </ul>
+            </div>
         </section>
     </section>
 
     <script>
-        function viewResult(serviceType) {
-            // Điều hướng tới trang kết quả tương ứng (sử dụng URL thực tế của bạn)
-            window.location.href = `${serviceType}_results.html`;
+        function viewServiceDetail(serviceType) {
+            // Điều hướng tới trang chi tiết dịch vụ tương ứng
+            window.location.href = `${serviceType}_details.html`;
         }
     </script>
 </body>
