@@ -3,75 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Bệnh Án</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Danh Sách Dịch Vụ Cận Lâm Sàng</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #eaf4f7; /* Màu nền xanh nhạt */
-            color: #333; /* Màu chữ tối để dễ đọc */
-            margin: 0;
-            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
-
-        .header {
+        header, .record-section {
             text-align: center;
-            margin: 20px 0;
+            margin: 20px;
         }
-
-        .header h1 {
-            font-size: 24px;
-            color: #0056b3; /* Màu xanh đậm cho tiêu đề */
-            margin: 0;
+        .hospital-info h1, .hospital-info h2 {
+            margin: 5px 0;
         }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #ffffff; /* Nền trắng cho khung nội dung */
+        .patient-record {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
-
-        .services-header {
-            margin: 20px 0;
-            font-size: 28px; /* Kích thước chữ cho tiêu đề dịch vụ lớn hơn */
-            color: #333; /* Màu chữ tối để dễ đọc */
-            font-weight: bold; /* Đậm chữ */
+        .patient-info {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #007bff;
         }
-
-        .service-item {
-            font-size: 20px; /* Kích thước chữ cho các dịch vụ */
-            margin: 10px 0; /* Khoảng cách giữa các dịch vụ */
-            color: #0056b3; /* Màu xanh cho dịch vụ */
+        .record-section h3 {
+            color: #333;
+            margin: 0 0 15px;
         }
-
-        .service-link {
-            text-decoration: none; /* Bỏ gạch chân */
-            font-weight: bold; /* Đậm chữ cho liên kết */
-            color: #0056b3; /* Màu xanh cho liên kết */
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-        .service-link:hover {
-            text-decoration: underline; /* Gạch chân khi hover */
+        .service-list li {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .service-list li:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="hospital-info">
         <h1>SỞ Y TẾ CAO BẰNG</h1>
-        <h1>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h1>
-    </div>
-    <div class="container">
-        <div class="services-header">DANH SÁCH DỊCH VỤ CẬN LÂM SÀNG</div>
-        <div class="service-item">
-            <a href="results.html" class="service-link">Xem kết quả Cận lâm sàng</a>
+        <h2>BỆNH VIỆN ĐA KHOA Y DƯỢC CỔ TRUYỀN – PHỤC HỒI CHỨC NĂNG CAO BẰNG</h2>
+    </header>
+
+    <section class="patient-record">
+        <h3>HỒ SƠ BỆNH ÁN</h3>
+        <div class="patient-info">
+            <p>Họ và tên người bệnh: Vương Quốc Tuấn</p>
+            <p>Mã bệnh án: 123456</p>
         </div>
-        <div class="service-item">
-            <a href="imaging_services.html" class="service-link">Dịch vụ hình ảnh cận lâm sàng</a>
-        </div>
-    </div>
+        <section class="record-section">
+            <h3>Danh sách dịch vụ Cận lâm sàng</h3>
+            <ul class="service-list">
+                <li onclick="viewResult('xray')">Xem hình ảnh X-quang</li>
+                <li onclick="viewResult('ct_mri')">Xem hình ảnh CLVT / MRI</li>
+                <li onclick="viewResult('ultrasound')">Xem hình ảnh siêu âm</li>
+                <li onclick="viewResult('endoscopy')">Xem video nội soi dạ dày / trực tràng</li>
+                <li onclick="viewResult('lab')">Xem kết quả xét nghiệm</li>
+                <li onclick="viewResult('functional')">Xem kết quả thăm dò chức năng</li>
+            </ul>
+        </section>
+    </section>
+
+    <script>
+        function viewResult(serviceType) {
+            // Điều hướng tới trang kết quả tương ứng (sử dụng URL thực tế của bạn)
+            window.location.href = `${serviceType}_results.html`;
+        }
+    </script>
 </body>
 </html>
